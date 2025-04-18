@@ -13,11 +13,19 @@ Module conexionbase
             conex.ConnectionString = conectar
             conex.Open()
             'MsgBox("Conexión satisfactoria")
-
         Catch ex As Exception
             MsgBox("Error en la conexión!" + ex.Message
                    )
-
         End Try
+    End Sub
+
+    Sub consultas(ByVal Sql As String, ByVal Tabla As String)
+        Try
+            da = New MySqlDataAdapter(Sql, conex)
+            da.Fill(ds, Tabla)
+        Catch ex As Exception
+            MsgBox("ERROR!" + ex.Message)
+        End Try
+
     End Sub
 End Module

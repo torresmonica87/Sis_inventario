@@ -25,9 +25,9 @@ Partial Class Form1
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.txtusuario = New System.Windows.Forms.TextBox()
+        Me.Txtuser = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.txtcontraseña = New System.Windows.Forms.TextBox()
+        Me.Txtpass = New System.Windows.Forms.TextBox()
         Me.btningresar = New System.Windows.Forms.Button()
         Me.btnsalir = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -55,13 +55,13 @@ Partial Class Form1
         Me.Label2.Size = New System.Drawing.Size(0, 13)
         Me.Label2.TabIndex = 1
         '
-        'txtusuario
+        'Txtuser
         '
-        Me.txtusuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtusuario.Location = New System.Drawing.Point(31, 195)
-        Me.txtusuario.Name = "txtusuario"
-        Me.txtusuario.Size = New System.Drawing.Size(201, 26)
-        Me.txtusuario.TabIndex = 2
+        Me.Txtuser.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txtuser.Location = New System.Drawing.Point(31, 195)
+        Me.Txtuser.Name = "Txtuser"
+        Me.Txtuser.Size = New System.Drawing.Size(201, 26)
+        Me.Txtuser.TabIndex = 2
         '
         'Label3
         '
@@ -76,13 +76,14 @@ Partial Class Form1
         Me.Label3.Text = "CONTRASEÑA"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
-        'txtcontraseña
+        'Txtpass
         '
-        Me.txtcontraseña.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtcontraseña.Location = New System.Drawing.Point(31, 283)
-        Me.txtcontraseña.Name = "txtcontraseña"
-        Me.txtcontraseña.Size = New System.Drawing.Size(201, 26)
-        Me.txtcontraseña.TabIndex = 4
+        Me.Txtpass.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txtpass.Location = New System.Drawing.Point(31, 283)
+        Me.Txtpass.Name = "Txtpass"
+        Me.Txtpass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.Txtpass.Size = New System.Drawing.Size(201, 26)
+        Me.Txtpass.TabIndex = 4
         '
         'btningresar
         '
@@ -126,9 +127,9 @@ Partial Class Form1
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.btnsalir)
         Me.Controls.Add(Me.btningresar)
-        Me.Controls.Add(Me.txtcontraseña)
+        Me.Controls.Add(Me.Txtpass)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.txtusuario)
+        Me.Controls.Add(Me.Txtuser)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -143,10 +144,35 @@ Partial Class Form1
 
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents txtusuario As TextBox
+    Friend WithEvents Txtuser As TextBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents txtcontraseña As TextBox
+    Friend WithEvents Txtpass As TextBox
     Friend WithEvents btningresar As Button
     Friend WithEvents btnsalir As Button
     Friend WithEvents PictureBox1 As PictureBox
+    'aqui es cuando hago doble click en form de bienvenida
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        conexion()
+    End Sub
+
+    Private Sub btningresar_Click(sender As Object, e As EventArgs) Handles btningresar.Click
+        If Txtuser.Text = "" Or Txtpass.Text = "" Then
+            MsgBox("LOS DATOS NO ESTÁN COMPLETOS!")
+        Else
+            consultas("SELECT * FROM usuarios where nick_usuario= '" + Trim(Txtuser.Text) + "'and clave_usuario='" + Trim(Eramake.eCryptography.Encrypt(Txtpass.Text)) + "'", "usuarios")
+            da.Fill(ds, "usuarios")
+            Dim fila1 As Integer
+            fila1 = ds.Tables("usuarios").Rows.Count
+            If fila1 = 0 Then
+                MsgBox("LAS CREDENCIALES NO SON CORRECTAS!")
+                Txtuser.Text = ""
+                Txtpass.Text = ""
+                Txtuser.Focus()
+            Else
+                'debo crear un nuevo formulario para poder dar ingreso al sistema en caso de que todos los datos esten correctos
+                Me.Hide()
+                F_MENUP.Show()
+            End If
+        End If
+    End Sub
 End Class
