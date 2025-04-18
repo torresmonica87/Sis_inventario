@@ -159,7 +159,7 @@ Partial Class Form1
         If Txtuser.Text = "" Or Txtpass.Text = "" Then
             MsgBox("LOS DATOS NO ESTÁN COMPLETOS!")
         Else
-            consultas("SELECT * FROM usuarios where nick_usuario= '" + Trim(Txtuser.Text) + "'and clave_usuario='" + Trim(Eramake.eCryptography.Encrypt(Txtpass.Text)) + "'", "usuarios")
+            consultas("SELECT * FROM usuarios WHERE nick_usuario= '" + Trim(Txtuser.Text) + "' AND clave_usuario='" + Trim(Eramake.eCryptography.Encrypt(Txtpass.Text)) + "' AND estado_usuario = 'ACTIVO'", "usuarios")
             da.Fill(ds, "usuarios")
             Dim fila1 As Integer
             fila1 = ds.Tables("usuarios").Rows.Count
@@ -170,9 +170,20 @@ Partial Class Form1
                 Txtuser.Focus()
             Else
                 'debo crear un nuevo formulario para poder dar ingreso al sistema en caso de que todos los datos esten correctos
+                idusu = ds.Tables("usuarios").Rows(0).Item("id_usuario")
+                nomusu = ds.Tables("usuarios").Rows(0).Item("nom_usuario")
+                nickusu = ds.Tables("usuarios").Rows(0).Item("nick_usuario")
+                tipusu = ds.Tables("usuarios").Rows(0).Item("tipo_usuario")
+
                 Me.Hide()
                 F_MENUP.Show()
             End If
+        End If
+    End Sub
+
+    Private Sub btnsalir_Click(sender As Object, e As EventArgs) Handles btnsalir.Click
+        If cierre_ventana() = 6 Then
+            End
         End If
     End Sub
 End Class
