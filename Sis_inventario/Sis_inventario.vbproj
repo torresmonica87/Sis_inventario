@@ -129,6 +129,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="conexionbase.vb" />
+    <Compile Include="CONTROL DE CLIENTES.Designer.vb">
+      <DependentUpon>CONTROL DE CLIENTES.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONTROL DE CLIENTES.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONTROL DE PROVEEDORES.Designer.vb">
+      <DependentUpon>CONTROL DE PROVEEDORES.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONTROL DE PROVEEDORES.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form1.vb" />
     <Compile Include="Form1.Designer.vb">
       <DependentUpon>Form1.vb</DependentUpon>
@@ -138,6 +150,12 @@
       <DependentUpon>F_MENUP.vb</DependentUpon>
     </Compile>
     <Compile Include="F_MENUP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_USUARIOS.Designer.vb">
+      <DependentUpon>F_USUARIOS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="F_USUARIOS.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MOD_VENTANA.vb" />
@@ -158,11 +176,20 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CONTROL DE CLIENTES.resx">
+      <DependentUpon>CONTROL DE CLIENTES.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONTROL DE PROVEEDORES.resx">
+      <DependentUpon>CONTROL DE PROVEEDORES.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F_MENUP.resx">
       <DependentUpon>F_MENUP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_USUARIOS.resx">
+      <DependentUpon>F_USUARIOS.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
