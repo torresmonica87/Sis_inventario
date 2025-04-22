@@ -135,6 +135,12 @@
     <Compile Include="CONTROL DE CLIENTES.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CONTROL DE PRODUCTOS.Designer.vb">
+      <DependentUpon>CONTROL DE PRODUCTOS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONTROL DE PRODUCTOS.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CONTROL DE PROVEEDORES.Designer.vb">
       <DependentUpon>CONTROL DE PROVEEDORES.vb</DependentUpon>
     </Compile>
@@ -178,6 +184,9 @@
   <ItemGroup>
     <EmbeddedResource Include="CONTROL DE CLIENTES.resx">
       <DependentUpon>CONTROL DE CLIENTES.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONTROL DE PRODUCTOS.resx">
+      <DependentUpon>CONTROL DE PRODUCTOS.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CONTROL DE PROVEEDORES.resx">
       <DependentUpon>CONTROL DE PROVEEDORES.vb</DependentUpon>
