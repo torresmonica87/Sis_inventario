@@ -28,4 +28,23 @@ Module conexionbase
         End Try
 
     End Sub
+
+    Function acciontabla(ByVal sql As String)
+        Try
+            If conex.State <> ConnectionState.Open Then
+                conex.Open()
+            End If
+            comando = New MySqlCommand(sql, conex)
+            Dim i1 As Integer = comando.ExecuteNonQuery
+            conex.Close()
+            If i1 > 0 Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Function
+
 End Module

@@ -50,7 +50,13 @@ Partial Class F_PRODUCTOS
         Me.btnguardar = New System.Windows.Forms.Button()
         Me.btnsalir = New System.Windows.Forms.Button()
         Me.btnmodificar = New System.Windows.Forms.Button()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.txtcate = New System.Windows.Forms.TextBox()
+        Me.Button4 = New System.Windows.Forms.Button()
         CType(Me.pbfoto, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -320,12 +326,62 @@ Partial Class F_PRODUCTOS
         Me.btnmodificar.Text = "MODIFICAR"
         Me.btnmodificar.UseVisualStyleBackColor = False
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.Button3)
+        Me.GroupBox1.Controls.Add(Me.Button1)
+        Me.GroupBox1.Controls.Add(Me.txtcate)
+        Me.GroupBox1.Location = New System.Drawing.Point(301, 234)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(371, 99)
+        Me.GroupBox1.TabIndex = 29
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "CREAR CATEGORIAS"
+        Me.GroupBox1.Visible = False
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(221, 56)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(92, 32)
+        Me.Button3.TabIndex = 2
+        Me.Button3.Text = "CANCELAR"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(36, 56)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(92, 32)
+        Me.Button1.TabIndex = 1
+        Me.Button1.Text = "ACEPTAR"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'txtcate
+        '
+        Me.txtcate.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtcate.Location = New System.Drawing.Point(6, 19)
+        Me.txtcate.Name = "txtcate"
+        Me.txtcate.Size = New System.Drawing.Size(123, 22)
+        Me.txtcate.TabIndex = 0
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(173, 234)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(97, 27)
+        Me.Button4.TabIndex = 30
+        Me.Button4.Text = "SUBIR FOTO"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
         'F_PRODUCTOS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(741, 450)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Button4)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.btnmodificar)
         Me.Controls.Add(Me.btnsalir)
         Me.Controls.Add(Me.btnguardar)
@@ -359,6 +415,8 @@ Partial Class F_PRODUCTOS
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "CONTROL DE PRODUCTOS"
         CType(Me.pbfoto, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -392,4 +450,9 @@ Partial Class F_PRODUCTOS
     Friend WithEvents btnguardar As Button
     Friend WithEvents btnsalir As Button
     Friend WithEvents btnmodificar As Button
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Button1 As Button
+    Friend WithEvents txtcate As TextBox
+    Friend WithEvents Button4 As Button
 End Class

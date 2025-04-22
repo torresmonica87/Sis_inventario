@@ -25,7 +25,7 @@
             End If
         Next
     End Sub
-    Public Sub lecturayescritura(contenedor As Control, sololectura As List(Of String), editable As List(Of String)
+    Public Sub lecturayescritura(contenedor As Control, sololectura As List(Of String), editable As List(Of String))
         For Each ctrl As Control In contenedor.Controls
             If TypeOf ctrl Is TextBox Then
                 Dim txt As TextBox = CType(ctrl, TextBox)
@@ -37,5 +37,10 @@
             End If
         Next
     End Sub
+
+    Public Function cancelar_accion() As Integer
+        Dim valoraccion As Integer = MsgBox("ESTÁS SEGUTO DE CANCELAR ACCIÓN", 4 + 64, "PROYECTO")
+        Return valoraccion
+    End Function
 
 End Module
