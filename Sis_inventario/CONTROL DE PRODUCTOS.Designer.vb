@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class CONTROL_DE_PRODUCTOS
+Partial Class F_PRODUCTOS
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -277,6 +277,7 @@ Partial Class CONTROL_DE_PRODUCTOS
         'btncancelar
         '
         Me.btncancelar.BackColor = System.Drawing.Color.PowderBlue
+        Me.btncancelar.Enabled = False
         Me.btncancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btncancelar.Location = New System.Drawing.Point(294, 376)
         Me.btncancelar.Name = "btncancelar"
@@ -288,6 +289,7 @@ Partial Class CONTROL_DE_PRODUCTOS
         'btnguardar
         '
         Me.btnguardar.BackColor = System.Drawing.Color.PowderBlue
+        Me.btnguardar.Enabled = False
         Me.btnguardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnguardar.Location = New System.Drawing.Point(182, 376)
         Me.btnguardar.Name = "btnguardar"
@@ -318,7 +320,7 @@ Partial Class CONTROL_DE_PRODUCTOS
         Me.btnmodificar.Text = "MODIFICAR"
         Me.btnmodificar.UseVisualStyleBackColor = False
         '
-        'CONTROL_DE_PRODUCTOS
+        'F_PRODUCTOS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -353,7 +355,8 @@ Partial Class CONTROL_DE_PRODUCTOS
         Me.Controls.Add(Me.txtid)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Name = "CONTROL_DE_PRODUCTOS"
+        Me.Name = "F_PRODUCTOS"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "CONTROL DE PRODUCTOS"
         CType(Me.pbfoto, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

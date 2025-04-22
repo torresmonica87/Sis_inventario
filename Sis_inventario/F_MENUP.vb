@@ -18,4 +18,9 @@
             End
         End If
     End Sub
+
+    Private Sub PRODUCTOSToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PRODUCTOSToolStripMenuItem.Click
+        F_PRODUCTOS.MdiParent = Me
+        F_PRODUCTOS.Show()
+    End Sub
 End Class
