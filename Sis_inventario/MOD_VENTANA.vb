@@ -42,5 +42,37 @@
         Dim valoraccion As Integer = MsgBox("ESTÁS SEGURO DE CANCELAR ACCIÓN", 4 + 64, "PROYECTO")
         Return valoraccion
     End Function
+    Public Sub Limpiartextos(contenedor As Control)
+        For Each ctrl As Control In contenedor.Controls
+            If TypeOf ctrl Is TextBox Then
+                CType(ctrl, TextBox).Clear()
+            End If
+        Next
+    End Sub
 
+    Public Sub cambioestadoboton(contenedor As Control, activarboton As List(Of String), desactivarboton As List(Of String))
+        For Each ctrl As Control In contenedor.Controls
+            If TypeOf ctrl Is Button Then
+                Dim boton As Button = CType(ctrl, Button)
+                If activarboton.Contains(boton.Name) Then
+                    boton.Enabled = True
+                ElseIf desactivarboton.Contains(boton.Name) Then
+                    boton.Enabled = False
+                End If
+            End If
+        Next
+    End Sub
+
+    Public Sub cambiolectura(contenedor As Control, sololectura As List(Of String), editartext As List(Of String))
+        For Each ctrl As Control In contenedor.Controls
+            If TypeOf ctrl Is TextBox Then
+                Dim txt As TextBox = CType(ctrl, TextBox)
+                If sololectura.Contains(txt.Name) Then
+                    txt.ReadOnly = True
+                ElseIf editartext.Contains(txt.Name) Then
+                    txt.ReadOnly = False
+                End If
+            End If
+        Next
+    End Sub
 End Module

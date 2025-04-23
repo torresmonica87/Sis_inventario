@@ -22,15 +22,15 @@ Partial Class F_PROVEEDORES
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnguardar = New System.Windows.Forms.Button()
+        Me.btncancelar = New System.Windows.Forms.Button()
+        Me.btnmodificar = New System.Windows.Forms.Button()
+        Me.btneliminar = New System.Windows.Forms.Button()
+        Me.btnsalir = New System.Windows.Forms.Button()
+        Me.btnagregar = New System.Windows.Forms.Button()
         Me.txtprove = New System.Windows.Forms.TextBox()
-        Me.txtdir = New System.Windows.Forms.TextBox()
-        Me.txtcel = New System.Windows.Forms.TextBox()
+        Me.txtdireccion = New System.Windows.Forms.TextBox()
+        Me.txtcelular = New System.Windows.Forms.TextBox()
         Me.txtid = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -40,59 +40,59 @@ Partial Class F_PROVEEDORES
         Me.txtmail = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
-        'Button6
+        'btnguardar
         '
-        Me.Button6.Location = New System.Drawing.Point(171, 360)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(111, 33)
-        Me.Button6.TabIndex = 35
-        Me.Button6.Text = "GUARDAR"
-        Me.Button6.UseVisualStyleBackColor = True
+        Me.btnguardar.Location = New System.Drawing.Point(171, 360)
+        Me.btnguardar.Name = "btnguardar"
+        Me.btnguardar.Size = New System.Drawing.Size(111, 33)
+        Me.btnguardar.TabIndex = 35
+        Me.btnguardar.Text = "GUARDAR"
+        Me.btnguardar.UseVisualStyleBackColor = True
         '
-        'Button5
+        'btncancelar
         '
-        Me.Button5.Location = New System.Drawing.Point(288, 360)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(111, 33)
-        Me.Button5.TabIndex = 34
-        Me.Button5.Text = "CANCELAR"
-        Me.Button5.UseVisualStyleBackColor = True
+        Me.btncancelar.Location = New System.Drawing.Point(288, 360)
+        Me.btncancelar.Name = "btncancelar"
+        Me.btncancelar.Size = New System.Drawing.Size(111, 33)
+        Me.btncancelar.TabIndex = 34
+        Me.btncancelar.Text = "CANCELAR"
+        Me.btncancelar.UseVisualStyleBackColor = True
         '
-        'Button4
+        'btnmodificar
         '
-        Me.Button4.Location = New System.Drawing.Point(405, 360)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(111, 33)
-        Me.Button4.TabIndex = 33
-        Me.Button4.Text = "MODIFICAR"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.btnmodificar.Location = New System.Drawing.Point(405, 360)
+        Me.btnmodificar.Name = "btnmodificar"
+        Me.btnmodificar.Size = New System.Drawing.Size(111, 33)
+        Me.btnmodificar.TabIndex = 33
+        Me.btnmodificar.Text = "MODIFICAR"
+        Me.btnmodificar.UseVisualStyleBackColor = True
         '
-        'Button3
+        'btneliminar
         '
-        Me.Button3.Location = New System.Drawing.Point(522, 360)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(111, 33)
-        Me.Button3.TabIndex = 32
-        Me.Button3.Text = "ELIMINAR"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.btneliminar.Location = New System.Drawing.Point(522, 360)
+        Me.btneliminar.Name = "btneliminar"
+        Me.btneliminar.Size = New System.Drawing.Size(111, 33)
+        Me.btneliminar.TabIndex = 32
+        Me.btneliminar.Text = "ELIMINAR"
+        Me.btneliminar.UseVisualStyleBackColor = True
         '
-        'Button2
+        'btnsalir
         '
-        Me.Button2.Location = New System.Drawing.Point(639, 360)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(111, 33)
-        Me.Button2.TabIndex = 31
-        Me.Button2.Text = "SALIR"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnsalir.Location = New System.Drawing.Point(639, 360)
+        Me.btnsalir.Name = "btnsalir"
+        Me.btnsalir.Size = New System.Drawing.Size(111, 33)
+        Me.btnsalir.TabIndex = 31
+        Me.btnsalir.Text = "SALIR"
+        Me.btnsalir.UseVisualStyleBackColor = True
         '
-        'Button1
+        'btnagregar
         '
-        Me.Button1.Location = New System.Drawing.Point(54, 360)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(111, 33)
-        Me.Button1.TabIndex = 30
-        Me.Button1.Text = "AGREGAR"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnagregar.Location = New System.Drawing.Point(54, 360)
+        Me.btnagregar.Name = "btnagregar"
+        Me.btnagregar.Size = New System.Drawing.Size(111, 33)
+        Me.btnagregar.TabIndex = 30
+        Me.btnagregar.Text = "AGREGAR"
+        Me.btnagregar.UseVisualStyleBackColor = True
         '
         'txtprove
         '
@@ -101,19 +101,19 @@ Partial Class F_PROVEEDORES
         Me.txtprove.Size = New System.Drawing.Size(379, 20)
         Me.txtprove.TabIndex = 29
         '
-        'txtdir
+        'txtdireccion
         '
-        Me.txtdir.Location = New System.Drawing.Point(275, 157)
-        Me.txtdir.Name = "txtdir"
-        Me.txtdir.Size = New System.Drawing.Size(379, 20)
-        Me.txtdir.TabIndex = 28
+        Me.txtdireccion.Location = New System.Drawing.Point(275, 157)
+        Me.txtdireccion.Name = "txtdireccion"
+        Me.txtdireccion.Size = New System.Drawing.Size(379, 20)
+        Me.txtdireccion.TabIndex = 28
         '
-        'txtcel
+        'txtcelular
         '
-        Me.txtcel.Location = New System.Drawing.Point(275, 200)
-        Me.txtcel.Name = "txtcel"
-        Me.txtcel.Size = New System.Drawing.Size(241, 20)
-        Me.txtcel.TabIndex = 27
+        Me.txtcelular.Location = New System.Drawing.Point(275, 200)
+        Me.txtcelular.Name = "txtcelular"
+        Me.txtcelular.Size = New System.Drawing.Size(241, 20)
+        Me.txtcelular.TabIndex = 27
         '
         'txtid
         '
@@ -185,15 +185,15 @@ Partial Class F_PROVEEDORES
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.txtmail)
-        Me.Controls.Add(Me.Button6)
-        Me.Controls.Add(Me.Button5)
-        Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnguardar)
+        Me.Controls.Add(Me.btncancelar)
+        Me.Controls.Add(Me.btnmodificar)
+        Me.Controls.Add(Me.btneliminar)
+        Me.Controls.Add(Me.btnsalir)
+        Me.Controls.Add(Me.btnagregar)
         Me.Controls.Add(Me.txtprove)
-        Me.Controls.Add(Me.txtdir)
-        Me.Controls.Add(Me.txtcel)
+        Me.Controls.Add(Me.txtdireccion)
+        Me.Controls.Add(Me.txtcelular)
         Me.Controls.Add(Me.txtid)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
@@ -206,15 +206,15 @@ Partial Class F_PROVEEDORES
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Button6 As Button
-    Friend WithEvents Button5 As Button
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnguardar As Button
+    Friend WithEvents btncancelar As Button
+    Friend WithEvents btnmodificar As Button
+    Friend WithEvents btneliminar As Button
+    Friend WithEvents btnsalir As Button
+    Friend WithEvents btnagregar As Button
     Friend WithEvents txtprove As TextBox
-    Friend WithEvents txtdir As TextBox
-    Friend WithEvents txtcel As TextBox
+    Friend WithEvents txtdireccion As TextBox
+    Friend WithEvents txtcelular As TextBox
     Friend WithEvents txtid As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
