@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class CONTROL_DE_CLIENTES
+Partial Class F_CLIENTES
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -179,7 +179,7 @@ Partial Class CONTROL_DE_CLIENTES
         Me.Label1.TabIndex = 37
         Me.Label1.Text = "R.U.C. / C.I."
         '
-        'CONTROL_DE_CLIENTES
+        'F_CLIENTES
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -200,8 +200,8 @@ Partial Class CONTROL_DE_CLIENTES
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Name = "CONTROL_DE_CLIENTES"
-        Me.Text = "CONTROL_DE_CLIENTES"
+        Me.Name = "F_CLIENTES"
+        Me.Text = "CONTROL DE CLIENTES"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

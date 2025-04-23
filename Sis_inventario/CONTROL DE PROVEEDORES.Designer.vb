@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class CONTROL_DE_PROVEEDORES
+Partial Class F_PROVEEDORES
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -28,16 +28,16 @@ Partial Class CONTROL_DE_PROVEEDORES
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtprove = New System.Windows.Forms.TextBox()
+        Me.txtdir = New System.Windows.Forms.TextBox()
+        Me.txtcel = New System.Windows.Forms.TextBox()
+        Me.txtid = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.txtmail = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'Button6
@@ -94,33 +94,33 @@ Partial Class CONTROL_DE_PROVEEDORES
         Me.Button1.Text = "AGREGAR"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'TextBox6
+        'txtprove
         '
-        Me.TextBox6.Location = New System.Drawing.Point(275, 110)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(379, 20)
-        Me.TextBox6.TabIndex = 29
+        Me.txtprove.Location = New System.Drawing.Point(275, 110)
+        Me.txtprove.Name = "txtprove"
+        Me.txtprove.Size = New System.Drawing.Size(379, 20)
+        Me.txtprove.TabIndex = 29
         '
-        'TextBox5
+        'txtdir
         '
-        Me.TextBox5.Location = New System.Drawing.Point(275, 157)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(379, 20)
-        Me.TextBox5.TabIndex = 28
+        Me.txtdir.Location = New System.Drawing.Point(275, 157)
+        Me.txtdir.Name = "txtdir"
+        Me.txtdir.Size = New System.Drawing.Size(379, 20)
+        Me.txtdir.TabIndex = 28
         '
-        'TextBox4
+        'txtcel
         '
-        Me.TextBox4.Location = New System.Drawing.Point(275, 200)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(241, 20)
-        Me.TextBox4.TabIndex = 27
+        Me.txtcel.Location = New System.Drawing.Point(275, 200)
+        Me.txtcel.Name = "txtcel"
+        Me.txtcel.Size = New System.Drawing.Size(241, 20)
+        Me.txtcel.TabIndex = 27
         '
-        'TextBox1
+        'txtid
         '
-        Me.TextBox1.Location = New System.Drawing.Point(275, 57)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(241, 20)
-        Me.TextBox1.TabIndex = 26
+        Me.txtid.Location = New System.Drawing.Point(275, 57)
+        Me.txtid.Name = "txtid"
+        Me.txtid.Size = New System.Drawing.Size(241, 20)
+        Me.txtid.TabIndex = 26
         '
         'Label5
         '
@@ -172,36 +172,36 @@ Partial Class CONTROL_DE_PROVEEDORES
         Me.Label1.TabIndex = 20
         Me.Label1.Text = "R.U.C. / C.I."
         '
-        'TextBox2
+        'txtmail
         '
-        Me.TextBox2.Location = New System.Drawing.Point(275, 249)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(379, 20)
-        Me.TextBox2.TabIndex = 36
+        Me.txtmail.Location = New System.Drawing.Point(275, 249)
+        Me.txtmail.Name = "txtmail"
+        Me.txtmail.Size = New System.Drawing.Size(379, 20)
+        Me.txtmail.TabIndex = 36
         '
-        'CONTROL_DE_PROVEEDORES
+        'F_PROVEEDORES
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.txtmail)
         Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.TextBox6)
-        Me.Controls.Add(Me.TextBox5)
-        Me.Controls.Add(Me.TextBox4)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.txtprove)
+        Me.Controls.Add(Me.txtdir)
+        Me.Controls.Add(Me.txtcel)
+        Me.Controls.Add(Me.txtid)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Name = "CONTROL_DE_PROVEEDORES"
-        Me.Text = "CONTROL_DE_PROVEEDORES"
+        Me.Name = "F_PROVEEDORES"
+        Me.Text = "CONTROL DE PROVEEDORES"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -212,14 +212,14 @@ Partial Class CONTROL_DE_PROVEEDORES
     Friend WithEvents Button3 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
-    Friend WithEvents TextBox6 As TextBox
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtprove As TextBox
+    Friend WithEvents txtdir As TextBox
+    Friend WithEvents txtcel As TextBox
+    Friend WithEvents txtid As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents txtmail As TextBox
 End Class

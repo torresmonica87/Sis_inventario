@@ -84,7 +84,7 @@ Public Class F_PRODUCTOS
     End Sub
 
     Private Sub pbfoto_Click(sender As Object, e As EventArgs) Handles pbfoto.Click
-        '  OpenFileDialog1.filter = "imagenes|*.jpg;*.jepg;*.png"
+        '  OpenFileDialog1.filter = "imagenes|*.jpg;*.jepg;*.png" FALTA DEFINIR ESTO
     End Sub
 
     Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter

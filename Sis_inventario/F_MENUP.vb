@@ -1,6 +1,7 @@
 ﻿Public Class F_MENUP
     Private Sub USUARIOSToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles USUARIOSToolStripMenuItem.Click
-
+        F_USUARIOS.MdiParent = Me
+        F_USUARIOS.Show()
     End Sub
 
     Private Sub ToolStripStatusLabel1_Click(sender As Object, e As EventArgs) 
@@ -22,5 +23,15 @@
     Private Sub PRODUCTOSToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PRODUCTOSToolStripMenuItem.Click
         F_PRODUCTOS.MdiParent = Me
         F_PRODUCTOS.Show()
+    End Sub
+
+    Private Sub CLIENTESToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CLIENTESToolStripMenuItem.Click
+        F_CLIENTES.MdiParent = Me
+        F_CLIENTES.Show()
+    End Sub
+
+    Private Sub PROVEEDORESToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PROVEEDORESToolStripMenuItem.Click
+        F_PROVEEDORES.MdiParent = Me
+        F_PROVEEDORES.Show()
     End Sub
 End Class
