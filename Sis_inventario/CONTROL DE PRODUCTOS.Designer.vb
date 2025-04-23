@@ -331,7 +331,7 @@ Partial Class F_PRODUCTOS
         Me.GroupBox1.Controls.Add(Me.Button3)
         Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Controls.Add(Me.txtcate)
-        Me.GroupBox1.Location = New System.Drawing.Point(301, 234)
+        Me.GroupBox1.Location = New System.Drawing.Point(302, 235)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(371, 99)
         Me.GroupBox1.TabIndex = 29

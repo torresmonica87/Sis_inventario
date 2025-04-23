@@ -39,7 +39,7 @@
     End Sub
 
     Public Function cancelar_accion() As Integer
-        Dim valoraccion As Integer = MsgBox("ESTÁS SEGUTO DE CANCELAR ACCIÓN", 4 + 64, "PROYECTO")
+        Dim valoraccion As Integer = MsgBox("ESTÁS SEGURO DE CANCELAR ACCIÓN", 4 + 64, "PROYECTO")
         Return valoraccion
     End Function
 
