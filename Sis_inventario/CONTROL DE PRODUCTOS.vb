@@ -84,8 +84,13 @@ Public Class F_PRODUCTOS
     End Sub
 
     Private Sub pbfoto_Click(sender As Object, e As EventArgs) Handles pbfoto.Click
-        '  OpenFileDialog1.filter = "imagenes|*.jpg;*.jepg;*.png" FALTA DEFINIR ESTO
+        OpenFileDialog1.Filter = "Imágenes|*.jpg;*.jpeg;*.png"
+        If OpenFileDialog1.ShowDialog() = DialogResult.OK Then
+            pbfoto.Image = Image.FromFile(OpenFileDialog1.FileName)
+            selectimagen = OpenFileDialog1.FileName
+        End If
     End Sub
+
 
     Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
         GroupBox1.Visible = True

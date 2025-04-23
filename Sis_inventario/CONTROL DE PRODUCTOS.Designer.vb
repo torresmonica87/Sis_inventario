@@ -55,6 +55,7 @@ Partial Class F_PRODUCTOS
         Me.Button1 = New System.Windows.Forms.Button()
         Me.txtcate = New System.Windows.Forms.TextBox()
         Me.Button4 = New System.Windows.Forms.Button()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         CType(Me.pbfoto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -374,6 +375,10 @@ Partial Class F_PRODUCTOS
         Me.Button4.Text = "SUBIR FOTO"
         Me.Button4.UseVisualStyleBackColor = True
         '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
         'F_PRODUCTOS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -455,4 +460,5 @@ Partial Class F_PRODUCTOS
     Friend WithEvents Button1 As Button
     Friend WithEvents txtcate As TextBox
     Friend WithEvents Button4 As Button
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
 End Class
