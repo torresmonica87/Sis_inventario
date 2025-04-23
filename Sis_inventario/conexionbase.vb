@@ -43,7 +43,25 @@ Module conexionbase
                 Return False
             End If
         Catch ex As Exception
-
+            Return False
+        End Try
+    End Function
+    Function accionesbdd(ByVal Sql As String)
+        Try
+            If conex.State <> ConnectionState.Open Then
+                conex.Open()
+            End If
+            comando = New MySqlCommand(Sql, conex)
+            Dim i1 As Integer = comando.ExecuteNonQuery
+            conex.Close()
+            If i1 > 0 Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox("Error" + ex.Message)
+            Return False
         End Try
     End Function
 

@@ -28,25 +28,25 @@ Partial Class F_USUARIOS
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.txtnombre = New System.Windows.Forms.TextBox()
+        Me.txtmail = New System.Windows.Forms.TextBox()
+        Me.txtcontraseña = New System.Windows.Forms.TextBox()
+        Me.txtuser = New System.Windows.Forms.TextBox()
+        Me.btnagregar = New System.Windows.Forms.Button()
+        Me.btnsalir = New System.Windows.Forms.Button()
+        Me.btneliminar = New System.Windows.Forms.Button()
+        Me.btnmodificar = New System.Windows.Forms.Button()
+        Me.btncancelar = New System.Windows.Forms.Button()
+        Me.btnguardar = New System.Windows.Forms.Button()
+        Me.cbtipo = New System.Windows.Forms.ComboBox()
+        Me.cbestado = New System.Windows.Forms.ComboBox()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(48, 31)
+        Me.Label1.Location = New System.Drawing.Point(48, 44)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(185, 20)
         Me.Label1.TabIndex = 0
@@ -102,121 +102,123 @@ Partial Class F_USUARIOS
         Me.Label6.TabIndex = 5
         Me.Label6.Text = "ESTADO"
         '
-        'TextBox1
+        'txtnombre
         '
-        Me.TextBox1.Location = New System.Drawing.Point(273, 31)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(379, 20)
-        Me.TextBox1.TabIndex = 6
+        Me.txtnombre.Location = New System.Drawing.Point(273, 44)
+        Me.txtnombre.Name = "txtnombre"
+        Me.txtnombre.Size = New System.Drawing.Size(379, 20)
+        Me.txtnombre.TabIndex = 6
         '
-        'TextBox4
+        'txtmail
         '
-        Me.TextBox4.Location = New System.Drawing.Point(273, 174)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(379, 20)
-        Me.TextBox4.TabIndex = 9
+        Me.txtmail.Location = New System.Drawing.Point(273, 174)
+        Me.txtmail.Name = "txtmail"
+        Me.txtmail.Size = New System.Drawing.Size(379, 20)
+        Me.txtmail.TabIndex = 9
         '
-        'TextBox5
+        'txtcontraseña
         '
-        Me.TextBox5.Location = New System.Drawing.Point(273, 131)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(379, 20)
-        Me.TextBox5.TabIndex = 10
+        Me.txtcontraseña.Location = New System.Drawing.Point(273, 131)
+        Me.txtcontraseña.Name = "txtcontraseña"
+        Me.txtcontraseña.Size = New System.Drawing.Size(379, 20)
+        Me.txtcontraseña.TabIndex = 10
         '
-        'TextBox6
+        'txtuser
         '
-        Me.TextBox6.Location = New System.Drawing.Point(273, 84)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(379, 20)
-        Me.TextBox6.TabIndex = 11
+        Me.txtuser.Location = New System.Drawing.Point(273, 84)
+        Me.txtuser.Name = "txtuser"
+        Me.txtuser.Size = New System.Drawing.Size(379, 20)
+        Me.txtuser.TabIndex = 11
         '
-        'Button1
+        'btnagregar
         '
-        Me.Button1.Location = New System.Drawing.Point(52, 334)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(111, 33)
-        Me.Button1.TabIndex = 12
-        Me.Button1.Text = "AGREGAR"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnagregar.Location = New System.Drawing.Point(52, 334)
+        Me.btnagregar.Name = "btnagregar"
+        Me.btnagregar.Size = New System.Drawing.Size(111, 33)
+        Me.btnagregar.TabIndex = 12
+        Me.btnagregar.Text = "AGREGAR"
+        Me.btnagregar.UseVisualStyleBackColor = True
         '
-        'Button2
+        'btnsalir
         '
-        Me.Button2.Location = New System.Drawing.Point(637, 334)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(111, 33)
-        Me.Button2.TabIndex = 13
-        Me.Button2.Text = "SALIR"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnsalir.Location = New System.Drawing.Point(637, 334)
+        Me.btnsalir.Name = "btnsalir"
+        Me.btnsalir.Size = New System.Drawing.Size(111, 33)
+        Me.btnsalir.TabIndex = 13
+        Me.btnsalir.Text = "SALIR"
+        Me.btnsalir.UseVisualStyleBackColor = True
         '
-        'Button3
+        'btneliminar
         '
-        Me.Button3.Location = New System.Drawing.Point(520, 334)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(111, 33)
-        Me.Button3.TabIndex = 14
-        Me.Button3.Text = "ELIMINAR"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.btneliminar.Location = New System.Drawing.Point(520, 334)
+        Me.btneliminar.Name = "btneliminar"
+        Me.btneliminar.Size = New System.Drawing.Size(111, 33)
+        Me.btneliminar.TabIndex = 14
+        Me.btneliminar.Text = "ELIMINAR"
+        Me.btneliminar.UseVisualStyleBackColor = True
         '
-        'Button4
+        'btnmodificar
         '
-        Me.Button4.Location = New System.Drawing.Point(403, 334)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(111, 33)
-        Me.Button4.TabIndex = 15
-        Me.Button4.Text = "MODIFICAR"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.btnmodificar.Location = New System.Drawing.Point(403, 334)
+        Me.btnmodificar.Name = "btnmodificar"
+        Me.btnmodificar.Size = New System.Drawing.Size(111, 33)
+        Me.btnmodificar.TabIndex = 15
+        Me.btnmodificar.Text = "MODIFICAR"
+        Me.btnmodificar.UseVisualStyleBackColor = True
         '
-        'Button5
+        'btncancelar
         '
-        Me.Button5.Location = New System.Drawing.Point(286, 334)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(111, 33)
-        Me.Button5.TabIndex = 16
-        Me.Button5.Text = "CANCELAR"
-        Me.Button5.UseVisualStyleBackColor = True
+        Me.btncancelar.Location = New System.Drawing.Point(286, 334)
+        Me.btncancelar.Name = "btncancelar"
+        Me.btncancelar.Size = New System.Drawing.Size(111, 33)
+        Me.btncancelar.TabIndex = 16
+        Me.btncancelar.Text = "CANCELAR"
+        Me.btncancelar.UseVisualStyleBackColor = True
         '
-        'Button6
+        'btnguardar
         '
-        Me.Button6.Location = New System.Drawing.Point(169, 334)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(111, 33)
-        Me.Button6.TabIndex = 17
-        Me.Button6.Text = "GUARDAR"
-        Me.Button6.UseVisualStyleBackColor = True
+        Me.btnguardar.Location = New System.Drawing.Point(169, 334)
+        Me.btnguardar.Name = "btnguardar"
+        Me.btnguardar.Size = New System.Drawing.Size(111, 33)
+        Me.btnguardar.TabIndex = 17
+        Me.btnguardar.Text = "GUARDAR"
+        Me.btnguardar.UseVisualStyleBackColor = True
         '
-        'ComboBox1
+        'cbtipo
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(273, 220)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(241, 21)
-        Me.ComboBox1.TabIndex = 18
+        Me.cbtipo.FormattingEnabled = True
+        Me.cbtipo.Items.AddRange(New Object() {"ADMINISTRADOR", "VENDEDOR"})
+        Me.cbtipo.Location = New System.Drawing.Point(273, 220)
+        Me.cbtipo.Name = "cbtipo"
+        Me.cbtipo.Size = New System.Drawing.Size(241, 21)
+        Me.cbtipo.TabIndex = 18
         '
-        'ComboBox2
+        'cbestado
         '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(273, 269)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(241, 21)
-        Me.ComboBox2.TabIndex = 19
+        Me.cbestado.FormattingEnabled = True
+        Me.cbestado.Items.AddRange(New Object() {"ACTIVO", "INACTIVO"})
+        Me.cbestado.Location = New System.Drawing.Point(273, 269)
+        Me.cbestado.Name = "cbestado"
+        Me.cbestado.Size = New System.Drawing.Size(241, 21)
+        Me.cbestado.TabIndex = 19
         '
         'F_USUARIOS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.ComboBox2)
-        Me.Controls.Add(Me.ComboBox1)
-        Me.Controls.Add(Me.Button6)
-        Me.Controls.Add(Me.Button5)
-        Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.TextBox6)
-        Me.Controls.Add(Me.TextBox5)
-        Me.Controls.Add(Me.TextBox4)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.cbestado)
+        Me.Controls.Add(Me.cbtipo)
+        Me.Controls.Add(Me.btnguardar)
+        Me.Controls.Add(Me.btncancelar)
+        Me.Controls.Add(Me.btnmodificar)
+        Me.Controls.Add(Me.btneliminar)
+        Me.Controls.Add(Me.btnsalir)
+        Me.Controls.Add(Me.btnagregar)
+        Me.Controls.Add(Me.txtuser)
+        Me.Controls.Add(Me.txtcontraseña)
+        Me.Controls.Add(Me.txtmail)
+        Me.Controls.Add(Me.txtnombre)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
@@ -236,16 +238,16 @@ Partial Class F_USUARIOS
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents TextBox6 As TextBox
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button5 As Button
-    Friend WithEvents Button6 As Button
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents txtnombre As TextBox
+    Friend WithEvents txtmail As TextBox
+    Friend WithEvents txtcontraseña As TextBox
+    Friend WithEvents txtuser As TextBox
+    Friend WithEvents btnagregar As Button
+    Friend WithEvents btnsalir As Button
+    Friend WithEvents btneliminar As Button
+    Friend WithEvents btnmodificar As Button
+    Friend WithEvents btncancelar As Button
+    Friend WithEvents btnguardar As Button
+    Friend WithEvents cbtipo As ComboBox
+    Friend WithEvents cbestado As ComboBox
 End Class

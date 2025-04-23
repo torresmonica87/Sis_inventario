@@ -12,8 +12,6 @@ Public Class F_PRODUCTOS
     Dim rutaweb As Integer
     Dim carpetaservidor As Integer
     Dim nombrefinal As Integer
-
-
     Sub ACTIVAR()
         estadoboton(Me, botonactivo, botoninactivo)
         lecturayescritura(Me, txteditable, txtlectura)
@@ -123,5 +121,4 @@ Public Class F_PRODUCTOS
             End If
         End If
     End Sub
-
 End Class

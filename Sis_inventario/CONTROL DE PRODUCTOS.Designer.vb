@@ -274,7 +274,7 @@ Partial Class F_PRODUCTOS
         '
         Me.btnnuevo.BackColor = System.Drawing.Color.PowderBlue
         Me.btnnuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnnuevo.Location = New System.Drawing.Point(70, 376)
+        Me.btnnuevo.Location = New System.Drawing.Point(86, 376)
         Me.btnnuevo.Name = "btnnuevo"
         Me.btnnuevo.Size = New System.Drawing.Size(106, 31)
         Me.btnnuevo.TabIndex = 24
@@ -286,7 +286,7 @@ Partial Class F_PRODUCTOS
         Me.btncancelar.BackColor = System.Drawing.Color.PowderBlue
         Me.btncancelar.Enabled = False
         Me.btncancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btncancelar.Location = New System.Drawing.Point(294, 376)
+        Me.btncancelar.Location = New System.Drawing.Point(310, 376)
         Me.btncancelar.Name = "btncancelar"
         Me.btncancelar.Size = New System.Drawing.Size(106, 31)
         Me.btncancelar.TabIndex = 25
@@ -298,7 +298,7 @@ Partial Class F_PRODUCTOS
         Me.btnguardar.BackColor = System.Drawing.Color.PowderBlue
         Me.btnguardar.Enabled = False
         Me.btnguardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnguardar.Location = New System.Drawing.Point(182, 376)
+        Me.btnguardar.Location = New System.Drawing.Point(198, 376)
         Me.btnguardar.Name = "btnguardar"
         Me.btnguardar.Size = New System.Drawing.Size(106, 31)
         Me.btnguardar.TabIndex = 26
@@ -309,7 +309,7 @@ Partial Class F_PRODUCTOS
         '
         Me.btnsalir.BackColor = System.Drawing.Color.PowderBlue
         Me.btnsalir.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnsalir.Location = New System.Drawing.Point(519, 376)
+        Me.btnsalir.Location = New System.Drawing.Point(535, 376)
         Me.btnsalir.Name = "btnsalir"
         Me.btnsalir.Size = New System.Drawing.Size(106, 31)
         Me.btnsalir.TabIndex = 27
@@ -320,7 +320,7 @@ Partial Class F_PRODUCTOS
         '
         Me.btnmodificar.BackColor = System.Drawing.Color.PowderBlue
         Me.btnmodificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnmodificar.Location = New System.Drawing.Point(406, 376)
+        Me.btnmodificar.Location = New System.Drawing.Point(422, 376)
         Me.btnmodificar.Name = "btnmodificar"
         Me.btnmodificar.Size = New System.Drawing.Size(106, 31)
         Me.btnmodificar.TabIndex = 28
