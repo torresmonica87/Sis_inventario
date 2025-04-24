@@ -56,8 +56,18 @@ Partial Class F_PRODUCTOS
         Me.txtcateg = New System.Windows.Forms.TextBox()
         Me.btnsubirfoto = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.dgv1 = New System.Windows.Forms.DataGridView()
+        Me.rbcodigo = New System.Windows.Forms.RadioButton()
+        Me.rbnombre = New System.Windows.Forms.RadioButton()
+        Me.txtbuscar = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
         CType(Me.pbfoto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
+        CType(Me.dgv1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -381,12 +391,100 @@ Partial Class F_PRODUCTOS
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.Button5)
+        Me.GroupBox2.Controls.Add(Me.Button4)
+        Me.GroupBox2.Controls.Add(Me.dgv1)
+        Me.GroupBox2.Controls.Add(Me.rbcodigo)
+        Me.GroupBox2.Controls.Add(Me.rbnombre)
+        Me.GroupBox2.Controls.Add(Me.txtbuscar)
+        Me.GroupBox2.Controls.Add(Me.Label10)
+        Me.GroupBox2.Location = New System.Drawing.Point(53, 60)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(634, 347)
+        Me.GroupBox2.TabIndex = 31
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "SELECCIONE EL PRODUCTO"
+        Me.GroupBox2.Visible = False
+        '
+        'Button5
+        '
+        Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button5.Location = New System.Drawing.Point(508, 304)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(98, 37)
+        Me.Button5.TabIndex = 13
+        Me.Button5.Text = "CANCELAR"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'Button4
+        '
+        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.Location = New System.Drawing.Point(32, 304)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(98, 37)
+        Me.Button4.TabIndex = 12
+        Me.Button4.Text = "ACEPTAR"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'dgv1
+        '
+        Me.dgv1.AllowUserToAddRows = False
+        Me.dgv1.AllowUserToDeleteRows = False
+        Me.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv1.Location = New System.Drawing.Point(31, 56)
+        Me.dgv1.Name = "dgv1"
+        Me.dgv1.ReadOnly = True
+        Me.dgv1.Size = New System.Drawing.Size(575, 242)
+        Me.dgv1.TabIndex = 11
+        '
+        'rbcodigo
+        '
+        Me.rbcodigo.AutoSize = True
+        Me.rbcodigo.Location = New System.Drawing.Point(441, 6)
+        Me.rbcodigo.Name = "rbcodigo"
+        Me.rbcodigo.Size = New System.Drawing.Size(93, 17)
+        Me.rbcodigo.TabIndex = 10
+        Me.rbcodigo.Text = "POR CÓDIGO"
+        Me.rbcodigo.UseVisualStyleBackColor = True
+        '
+        'rbnombre
+        '
+        Me.rbnombre.AutoSize = True
+        Me.rbnombre.Checked = True
+        Me.rbnombre.Location = New System.Drawing.Point(316, 6)
+        Me.rbnombre.Name = "rbnombre"
+        Me.rbnombre.Size = New System.Drawing.Size(98, 17)
+        Me.rbnombre.TabIndex = 9
+        Me.rbnombre.TabStop = True
+        Me.rbnombre.Text = "POR NOMBRE"
+        Me.rbnombre.UseVisualStyleBackColor = True
+        '
+        'txtbuscar
+        '
+        Me.txtbuscar.Location = New System.Drawing.Point(197, 25)
+        Me.txtbuscar.Name = "txtbuscar"
+        Me.txtbuscar.Size = New System.Drawing.Size(409, 20)
+        Me.txtbuscar.TabIndex = 8
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(28, 30)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(163, 13)
+        Me.Label10.TabIndex = 7
+        Me.Label10.Text = "INGRESE TODO O PARTE:"
+        '
         'F_PRODUCTOS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(741, 450)
         Me.ControlBox = False
+        Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.btnsubirfoto)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.btnmodificar)
@@ -424,6 +522,9 @@ Partial Class F_PRODUCTOS
         CType(Me.pbfoto, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
+        CType(Me.dgv1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -463,4 +564,12 @@ Partial Class F_PRODUCTOS
     Friend WithEvents txtcateg As TextBox
     Friend WithEvents btnsubirfoto As Button
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents Button5 As Button
+    Friend WithEvents Button4 As Button
+    Friend WithEvents dgv1 As DataGridView
+    Friend WithEvents rbcodigo As RadioButton
+    Friend WithEvents rbnombre As RadioButton
+    Friend WithEvents txtbuscar As TextBox
+    Friend WithEvents Label10 As Label
 End Class
