@@ -54,7 +54,7 @@ Partial Class F_PRODUCTOS
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.txtcate = New System.Windows.Forms.TextBox()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.btnsubirfoto = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         CType(Me.pbfoto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -237,6 +237,7 @@ Partial Class F_PRODUCTOS
         '
         'pbfoto
         '
+        Me.pbfoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.pbfoto.Location = New System.Drawing.Point(62, 235)
         Me.pbfoto.Name = "pbfoto"
         Me.pbfoto.Size = New System.Drawing.Size(87, 99)
@@ -366,14 +367,15 @@ Partial Class F_PRODUCTOS
         Me.txtcate.Size = New System.Drawing.Size(123, 22)
         Me.txtcate.TabIndex = 0
         '
-        'Button4
+        'btnsubirfoto
         '
-        Me.Button4.Location = New System.Drawing.Point(173, 234)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(97, 27)
-        Me.Button4.TabIndex = 30
-        Me.Button4.Text = "SUBIR FOTO"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.btnsubirfoto.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnsubirfoto.Location = New System.Drawing.Point(173, 234)
+        Me.btnsubirfoto.Name = "btnsubirfoto"
+        Me.btnsubirfoto.Size = New System.Drawing.Size(97, 27)
+        Me.btnsubirfoto.TabIndex = 30
+        Me.btnsubirfoto.Text = "SUBIR FOTO"
+        Me.btnsubirfoto.UseVisualStyleBackColor = True
         '
         'OpenFileDialog1
         '
@@ -385,7 +387,7 @@ Partial Class F_PRODUCTOS
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(741, 450)
         Me.ControlBox = False
-        Me.Controls.Add(Me.Button4)
+        Me.Controls.Add(Me.btnsubirfoto)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.btnmodificar)
         Me.Controls.Add(Me.btnsalir)
@@ -459,6 +461,6 @@ Partial Class F_PRODUCTOS
     Friend WithEvents Button3 As Button
     Friend WithEvents Button1 As Button
     Friend WithEvents txtcate As TextBox
-    Friend WithEvents Button4 As Button
+    Friend WithEvents btnsubirfoto As Button
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
 End Class

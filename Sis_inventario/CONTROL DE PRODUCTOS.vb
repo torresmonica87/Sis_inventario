@@ -25,14 +25,13 @@ Public Class F_PRODUCTOS
             Me.Close()
         End If
     End Sub
-    Sub llenarcategorias()
+    Sub llenarcategorias() 'para seleccionar categorias en el formulario de control de productos
         Dim cate1 As New MySqlDataAdapter("select * from categorias", conex)
         Dim dscate As New DataSet()
-        cate1.Fill(dscate.Tables("categorias"))
+        cate1.Fill(dscate, "categorias")
         cbcategoria.DataSource = dscate.Tables("categorias")
         cbcategoria.ValueMember = ("id_cate")
         cbcategoria.DisplayMember = ("detalle_cate")
-
     End Sub
     Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
         limpiatextos(Me)
@@ -48,14 +47,13 @@ Public Class F_PRODUCTOS
             btnsalir.Focus()
         End If
     End Sub
-
+    'cuando doy doble click a formulario control de productos
     Private Sub F_PRODUCTOS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' pbfoto.Load("") 'aqui falta colocar la direccion enlace de la imagen 
-        ' If conex.State <> ConnectionState.Open Then
-
-        ' End If
-        ' conexion()
-        'llenarcategorias()
+        pbfoto.Load("http://localhost/sis_inventario/foto_producto/PRODUCTO.png") 'si quiero colocarle red solo coloco la dirección ip en lugar del localhost
+        If conex.State <> ConnectionState.Open Then
+            conexion()
+        End If
+        llenarcategorias()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -121,4 +119,5 @@ Public Class F_PRODUCTOS
             End If
         End If
     End Sub
+
 End Class
