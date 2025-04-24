@@ -40,7 +40,7 @@ Partial Class F_PRODUCTOS
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.cbestado = New System.Windows.Forms.ComboBox()
-        Me.Label10 = New System.Windows.Forms.Label()
+        Me.lbimagen = New System.Windows.Forms.Label()
         Me.pbfoto = New System.Windows.Forms.PictureBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.cbcategoria = New System.Windows.Forms.ComboBox()
@@ -53,7 +53,7 @@ Partial Class F_PRODUCTOS
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.txtcate = New System.Windows.Forms.TextBox()
+        Me.txtcateg = New System.Windows.Forms.TextBox()
         Me.btnsubirfoto = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         CType(Me.pbfoto, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -226,14 +226,14 @@ Partial Class F_PRODUCTOS
         Me.cbestado.Size = New System.Drawing.Size(97, 21)
         Me.cbestado.TabIndex = 17
         '
-        'Label10
+        'lbimagen
         '
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(59, 346)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(106, 27)
-        Me.Label10.TabIndex = 18
-        Me.Label10.Text = "IMAGEN"
+        Me.lbimagen.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbimagen.Location = New System.Drawing.Point(59, 346)
+        Me.lbimagen.Name = "lbimagen"
+        Me.lbimagen.Size = New System.Drawing.Size(106, 27)
+        Me.lbimagen.TabIndex = 18
+        Me.lbimagen.Text = "IMAGEN"
         '
         'pbfoto
         '
@@ -332,7 +332,7 @@ Partial Class F_PRODUCTOS
         '
         Me.GroupBox1.Controls.Add(Me.Button3)
         Me.GroupBox1.Controls.Add(Me.Button1)
-        Me.GroupBox1.Controls.Add(Me.txtcate)
+        Me.GroupBox1.Controls.Add(Me.txtcateg)
         Me.GroupBox1.Location = New System.Drawing.Point(302, 235)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(371, 99)
@@ -359,13 +359,13 @@ Partial Class F_PRODUCTOS
         Me.Button1.Text = "ACEPTAR"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'txtcate
+        'txtcateg
         '
-        Me.txtcate.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtcate.Location = New System.Drawing.Point(6, 19)
-        Me.txtcate.Name = "txtcate"
-        Me.txtcate.Size = New System.Drawing.Size(123, 22)
-        Me.txtcate.TabIndex = 0
+        Me.txtcateg.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtcateg.Location = New System.Drawing.Point(19, 19)
+        Me.txtcateg.Name = "txtcateg"
+        Me.txtcateg.Size = New System.Drawing.Size(333, 22)
+        Me.txtcateg.TabIndex = 0
         '
         'btnsubirfoto
         '
@@ -398,7 +398,7 @@ Partial Class F_PRODUCTOS
         Me.Controls.Add(Me.cbcategoria)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.pbfoto)
-        Me.Controls.Add(Me.Label10)
+        Me.Controls.Add(Me.lbimagen)
         Me.Controls.Add(Me.cbestado)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.txtmin)
@@ -447,7 +447,7 @@ Partial Class F_PRODUCTOS
     Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents cbestado As ComboBox
-    Friend WithEvents Label10 As Label
+    Friend WithEvents lbimagen As Label
     Friend WithEvents pbfoto As PictureBox
     Friend WithEvents Label11 As Label
     Friend WithEvents cbcategoria As ComboBox
@@ -460,7 +460,7 @@ Partial Class F_PRODUCTOS
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Button3 As Button
     Friend WithEvents Button1 As Button
-    Friend WithEvents txtcate As TextBox
+    Friend WithEvents txtcateg As TextBox
     Friend WithEvents btnsubirfoto As Button
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
 End Class
