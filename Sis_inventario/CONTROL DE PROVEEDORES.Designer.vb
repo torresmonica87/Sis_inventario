@@ -29,7 +29,7 @@ Partial Class F_PROVEEDORES
         Me.btneliminar = New System.Windows.Forms.Button()
         Me.btnsalir = New System.Windows.Forms.Button()
         Me.btnagregar = New System.Windows.Forms.Button()
-        Me.txtprove = New System.Windows.Forms.TextBox()
+        Me.txtnombre = New System.Windows.Forms.TextBox()
         Me.txtdireccion = New System.Windows.Forms.TextBox()
         Me.txtcelular = New System.Windows.Forms.TextBox()
         Me.txtid = New System.Windows.Forms.TextBox()
@@ -40,11 +40,21 @@ Partial Class F_PROVEEDORES
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtmail = New System.Windows.Forms.TextBox()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.RB2 = New System.Windows.Forms.RadioButton()
+        Me.RB1 = New System.Windows.Forms.RadioButton()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.btnaceptar = New System.Windows.Forms.Button()
+        Me.DGV1 = New System.Windows.Forms.DataGridView()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.GroupBox1.SuspendLayout()
+        CType(Me.DGV1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnguardar
         '
-        Me.btnguardar.Location = New System.Drawing.Point(171, 360)
+        Me.btnguardar.Location = New System.Drawing.Point(163, 336)
         Me.btnguardar.Name = "btnguardar"
         Me.btnguardar.Size = New System.Drawing.Size(111, 33)
         Me.btnguardar.TabIndex = 35
@@ -53,7 +63,7 @@ Partial Class F_PROVEEDORES
         '
         'btncancelar
         '
-        Me.btncancelar.Location = New System.Drawing.Point(288, 360)
+        Me.btncancelar.Location = New System.Drawing.Point(280, 336)
         Me.btncancelar.Name = "btncancelar"
         Me.btncancelar.Size = New System.Drawing.Size(111, 33)
         Me.btncancelar.TabIndex = 34
@@ -62,7 +72,7 @@ Partial Class F_PROVEEDORES
         '
         'btnmodificar
         '
-        Me.btnmodificar.Location = New System.Drawing.Point(405, 360)
+        Me.btnmodificar.Location = New System.Drawing.Point(397, 336)
         Me.btnmodificar.Name = "btnmodificar"
         Me.btnmodificar.Size = New System.Drawing.Size(111, 33)
         Me.btnmodificar.TabIndex = 33
@@ -71,7 +81,7 @@ Partial Class F_PROVEEDORES
         '
         'btneliminar
         '
-        Me.btneliminar.Location = New System.Drawing.Point(522, 360)
+        Me.btneliminar.Location = New System.Drawing.Point(514, 336)
         Me.btneliminar.Name = "btneliminar"
         Me.btneliminar.Size = New System.Drawing.Size(111, 33)
         Me.btneliminar.TabIndex = 32
@@ -80,7 +90,7 @@ Partial Class F_PROVEEDORES
         '
         'btnsalir
         '
-        Me.btnsalir.Location = New System.Drawing.Point(639, 360)
+        Me.btnsalir.Location = New System.Drawing.Point(631, 336)
         Me.btnsalir.Name = "btnsalir"
         Me.btnsalir.Size = New System.Drawing.Size(111, 33)
         Me.btnsalir.TabIndex = 31
@@ -89,19 +99,19 @@ Partial Class F_PROVEEDORES
         '
         'btnagregar
         '
-        Me.btnagregar.Location = New System.Drawing.Point(54, 360)
+        Me.btnagregar.Location = New System.Drawing.Point(46, 336)
         Me.btnagregar.Name = "btnagregar"
         Me.btnagregar.Size = New System.Drawing.Size(111, 33)
         Me.btnagregar.TabIndex = 30
         Me.btnagregar.Text = "AGREGAR"
         Me.btnagregar.UseVisualStyleBackColor = True
         '
-        'txtprove
+        'txtnombre
         '
-        Me.txtprove.Location = New System.Drawing.Point(275, 110)
-        Me.txtprove.Name = "txtprove"
-        Me.txtprove.Size = New System.Drawing.Size(379, 20)
-        Me.txtprove.TabIndex = 29
+        Me.txtnombre.Location = New System.Drawing.Point(275, 110)
+        Me.txtnombre.Name = "txtnombre"
+        Me.txtnombre.Size = New System.Drawing.Size(379, 20)
+        Me.txtnombre.TabIndex = 29
         '
         'txtdireccion
         '
@@ -186,11 +196,94 @@ Partial Class F_PROVEEDORES
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
         Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.RB2)
+        Me.GroupBox1.Controls.Add(Me.RB1)
+        Me.GroupBox1.Controls.Add(Me.Button2)
+        Me.GroupBox1.Controls.Add(Me.btnaceptar)
+        Me.GroupBox1.Controls.Add(Me.DGV1)
+        Me.GroupBox1.Controls.Add(Me.Label6)
+        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Location = New System.Drawing.Point(36, 45)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(695, 360)
+        Me.GroupBox1.TabIndex = 37
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "SELECCIONE EL PROVEEDOR"
+        Me.GroupBox1.Visible = False
+        '
+        'RB2
+        '
+        Me.RB2.AutoSize = True
+        Me.RB2.Location = New System.Drawing.Point(329, 19)
+        Me.RB2.Name = "RB2"
+        Me.RB2.Size = New System.Drawing.Size(89, 17)
+        Me.RB2.TabIndex = 6
+        Me.RB2.Text = "POR RUC/CI"
+        Me.RB2.UseVisualStyleBackColor = True
+        '
+        'RB1
+        '
+        Me.RB1.AutoSize = True
+        Me.RB1.Location = New System.Drawing.Point(225, 18)
+        Me.RB1.Name = "RB1"
+        Me.RB1.Size = New System.Drawing.Size(98, 17)
+        Me.RB1.TabIndex = 5
+        Me.RB1.Text = "POR NOMBRE"
+        Me.RB1.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(474, 231)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(101, 30)
+        Me.Button2.TabIndex = 4
+        Me.Button2.Text = "CERRAR"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'btnaceptar
+        '
+        Me.btnaceptar.Location = New System.Drawing.Point(9, 231)
+        Me.btnaceptar.Name = "btnaceptar"
+        Me.btnaceptar.Size = New System.Drawing.Size(101, 30)
+        Me.btnaceptar.TabIndex = 3
+        Me.btnaceptar.Text = "ACEPTAR"
+        Me.btnaceptar.UseVisualStyleBackColor = True
+        '
+        'DGV1
+        '
+        Me.DGV1.AllowUserToAddRows = False
+        Me.DGV1.AllowUserToDeleteRows = False
+        Me.DGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGV1.Location = New System.Drawing.Point(9, 73)
+        Me.DGV1.Name = "DGV1"
+        Me.DGV1.ReadOnly = True
+        Me.DGV1.Size = New System.Drawing.Size(566, 156)
+        Me.DGV1.TabIndex = 2
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(6, 44)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(213, 13)
+        Me.Label6.TabIndex = 1
+        Me.Label6.Text = "INGRESE TODO O PARTE DEL NOMBRE"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(225, 41)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(350, 20)
+        Me.TextBox1.TabIndex = 0
+        '
         'F_PROVEEDORES
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.txtmail)
         Me.Controls.Add(Me.btnguardar)
         Me.Controls.Add(Me.btncancelar)
@@ -198,7 +291,7 @@ Partial Class F_PROVEEDORES
         Me.Controls.Add(Me.btneliminar)
         Me.Controls.Add(Me.btnsalir)
         Me.Controls.Add(Me.btnagregar)
-        Me.Controls.Add(Me.txtprove)
+        Me.Controls.Add(Me.txtnombre)
         Me.Controls.Add(Me.txtdireccion)
         Me.Controls.Add(Me.txtcelular)
         Me.Controls.Add(Me.txtid)
@@ -209,6 +302,9 @@ Partial Class F_PROVEEDORES
         Me.Controls.Add(Me.Label1)
         Me.Name = "F_PROVEEDORES"
         Me.Text = "CONTROL DE PROVEEDORES"
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        CType(Me.DGV1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -219,7 +315,7 @@ Partial Class F_PROVEEDORES
     Friend WithEvents btneliminar As Button
     Friend WithEvents btnsalir As Button
     Friend WithEvents btnagregar As Button
-    Friend WithEvents txtprove As TextBox
+    Friend WithEvents txtnombre As TextBox
     Friend WithEvents txtdireccion As TextBox
     Friend WithEvents txtcelular As TextBox
     Friend WithEvents txtid As TextBox
@@ -230,4 +326,12 @@ Partial Class F_PROVEEDORES
     Friend WithEvents Label1 As Label
     Friend WithEvents txtmail As TextBox
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents RB2 As RadioButton
+    Friend WithEvents RB1 As RadioButton
+    Friend WithEvents Button2 As Button
+    Friend WithEvents btnaceptar As Button
+    Friend WithEvents DGV1 As DataGridView
+    Friend WithEvents Label6 As Label
+    Friend WithEvents TextBox1 As TextBox
 End Class
