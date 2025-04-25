@@ -29,7 +29,7 @@ Partial Class F_USUARIOS
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtnombre = New System.Windows.Forms.TextBox()
-        Me.txtmail = New System.Windows.Forms.TextBox()
+        Me.txtemail = New System.Windows.Forms.TextBox()
         Me.txtcontraseña = New System.Windows.Forms.TextBox()
         Me.txtuser = New System.Windows.Forms.TextBox()
         Me.btnagregar = New System.Windows.Forms.Button()
@@ -40,6 +40,16 @@ Partial Class F_USUARIOS
         Me.btnguardar = New System.Windows.Forms.Button()
         Me.cbtipo = New System.Windows.Forms.ComboBox()
         Me.cbestado = New System.Windows.Forms.ComboBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.RB2 = New System.Windows.Forms.RadioButton()
+        Me.RB1 = New System.Windows.Forms.RadioButton()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.btnaceptar = New System.Windows.Forms.Button()
+        Me.DGV1 = New System.Windows.Forms.DataGridView()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.GroupBox1.SuspendLayout()
+        CType(Me.DGV1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -109,12 +119,12 @@ Partial Class F_USUARIOS
         Me.txtnombre.Size = New System.Drawing.Size(379, 20)
         Me.txtnombre.TabIndex = 6
         '
-        'txtmail
+        'txtemail
         '
-        Me.txtmail.Location = New System.Drawing.Point(273, 174)
-        Me.txtmail.Name = "txtmail"
-        Me.txtmail.Size = New System.Drawing.Size(379, 20)
-        Me.txtmail.TabIndex = 9
+        Me.txtemail.Location = New System.Drawing.Point(273, 174)
+        Me.txtemail.Name = "txtemail"
+        Me.txtemail.Size = New System.Drawing.Size(379, 20)
+        Me.txtemail.TabIndex = 9
         '
         'txtcontraseña
         '
@@ -202,11 +212,94 @@ Partial Class F_USUARIOS
         Me.cbestado.Size = New System.Drawing.Size(241, 21)
         Me.cbestado.TabIndex = 19
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.RB2)
+        Me.GroupBox1.Controls.Add(Me.RB1)
+        Me.GroupBox1.Controls.Add(Me.Button2)
+        Me.GroupBox1.Controls.Add(Me.btnaceptar)
+        Me.GroupBox1.Controls.Add(Me.DGV1)
+        Me.GroupBox1.Controls.Add(Me.Label7)
+        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Location = New System.Drawing.Point(52, 44)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(695, 360)
+        Me.GroupBox1.TabIndex = 38
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "SELECCIONE EL PROVEEDOR"
+        Me.GroupBox1.Visible = False
+        '
+        'RB2
+        '
+        Me.RB2.AutoSize = True
+        Me.RB2.Location = New System.Drawing.Point(329, 19)
+        Me.RB2.Name = "RB2"
+        Me.RB2.Size = New System.Drawing.Size(89, 17)
+        Me.RB2.TabIndex = 6
+        Me.RB2.Text = "POR RUC/CI"
+        Me.RB2.UseVisualStyleBackColor = True
+        '
+        'RB1
+        '
+        Me.RB1.AutoSize = True
+        Me.RB1.Location = New System.Drawing.Point(225, 18)
+        Me.RB1.Name = "RB1"
+        Me.RB1.Size = New System.Drawing.Size(98, 17)
+        Me.RB1.TabIndex = 5
+        Me.RB1.Text = "POR NOMBRE"
+        Me.RB1.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(474, 231)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(101, 30)
+        Me.Button2.TabIndex = 4
+        Me.Button2.Text = "CERRAR"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'btnaceptar
+        '
+        Me.btnaceptar.Location = New System.Drawing.Point(9, 231)
+        Me.btnaceptar.Name = "btnaceptar"
+        Me.btnaceptar.Size = New System.Drawing.Size(101, 30)
+        Me.btnaceptar.TabIndex = 3
+        Me.btnaceptar.Text = "ACEPTAR"
+        Me.btnaceptar.UseVisualStyleBackColor = True
+        '
+        'DGV1
+        '
+        Me.DGV1.AllowUserToAddRows = False
+        Me.DGV1.AllowUserToDeleteRows = False
+        Me.DGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGV1.Location = New System.Drawing.Point(9, 73)
+        Me.DGV1.Name = "DGV1"
+        Me.DGV1.ReadOnly = True
+        Me.DGV1.Size = New System.Drawing.Size(566, 156)
+        Me.DGV1.TabIndex = 2
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(6, 44)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(213, 13)
+        Me.Label7.TabIndex = 1
+        Me.Label7.Text = "INGRESE TODO O PARTE DEL NOMBRE"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(225, 41)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(350, 20)
+        Me.TextBox1.TabIndex = 0
+        '
         'F_USUARIOS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.cbestado)
         Me.Controls.Add(Me.cbtipo)
         Me.Controls.Add(Me.btnguardar)
@@ -217,7 +310,7 @@ Partial Class F_USUARIOS
         Me.Controls.Add(Me.btnagregar)
         Me.Controls.Add(Me.txtuser)
         Me.Controls.Add(Me.txtcontraseña)
-        Me.Controls.Add(Me.txtmail)
+        Me.Controls.Add(Me.txtemail)
         Me.Controls.Add(Me.txtnombre)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
@@ -227,6 +320,9 @@ Partial Class F_USUARIOS
         Me.Controls.Add(Me.Label1)
         Me.Name = "F_USUARIOS"
         Me.Text = "CONTROL DE USUARIOS"
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        CType(Me.DGV1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -239,7 +335,7 @@ Partial Class F_USUARIOS
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents txtnombre As TextBox
-    Friend WithEvents txtmail As TextBox
+    Friend WithEvents txtemail As TextBox
     Friend WithEvents txtcontraseña As TextBox
     Friend WithEvents txtuser As TextBox
     Friend WithEvents btnagregar As Button
@@ -250,4 +346,12 @@ Partial Class F_USUARIOS
     Friend WithEvents btnguardar As Button
     Friend WithEvents cbtipo As ComboBox
     Friend WithEvents cbestado As ComboBox
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents RB2 As RadioButton
+    Friend WithEvents RB1 As RadioButton
+    Friend WithEvents Button2 As Button
+    Friend WithEvents btnaceptar As Button
+    Friend WithEvents DGV1 As DataGridView
+    Friend WithEvents Label7 As Label
+    Friend WithEvents TextBox1 As TextBox
 End Class
