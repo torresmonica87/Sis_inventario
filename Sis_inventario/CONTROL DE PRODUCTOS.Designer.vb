@@ -400,7 +400,7 @@ Partial Class F_PRODUCTOS
         Me.GroupBox2.Controls.Add(Me.rbnombre)
         Me.GroupBox2.Controls.Add(Me.txtbuscar)
         Me.GroupBox2.Controls.Add(Me.Label10)
-        Me.GroupBox2.Location = New System.Drawing.Point(53, 60)
+        Me.GroupBox2.Location = New System.Drawing.Point(39, 60)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(634, 347)
         Me.GroupBox2.TabIndex = 31

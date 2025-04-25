@@ -19,9 +19,22 @@
         op = 1
         txtnombre.Focus()
     End Sub
-
+    'de f_usuarios
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
 
     End Sub
+    'de f_usuarios
+    Private Sub btncancelar_Click(sender As Object, e As EventArgs) Handles btncancelar.Click
+        Limpiartextos(Me)
+        cambioestadoboton(Me, btinactivo, btactivo)
+        cambiolectura(Me, lecturatext, editatext)
+    End Sub
+    'de f_usuarios
+    Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
 
+    End Sub
+    'de f_usuarios
+    Private Sub btneliminar_Click(sender As Object, e As EventArgs) Handles btneliminar.Click
+
+    End Sub
 End Class
