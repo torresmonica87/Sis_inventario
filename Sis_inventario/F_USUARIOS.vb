@@ -1,24 +1,28 @@
-﻿Public Class F_USUARIOS
+﻿Imports MySql.Data.MySqlClient
+Public Class F_USUARIOS
     Dim op As Integer
     Dim btactivo As New List(Of String) From {"btnguardar", "btncancelar"}
     Dim btinactivo As New List(Of String) From {"btnagregar", "btnmodificar", "btneliminar", "btnsalir"}
-    Dim lecturatext As New List(Of String) From {"txtnombre", "txtuser", "txtcontraseña", "txtmail", "cbtipo", "cbestado"}
+    Dim lecturatext As New List(Of String) From {"txtnombre", "txtuser", "txtcontraseña", "txtemail", "cbtipo", "cbestado"}
     Dim editatext As New List(Of String) From {"TXTID"}
     Dim consul1 As String
-    'mostrar datos a dgv en f_usuarios 
+    'mostrar datos a dgv en f_usuarios muestra en relacion a la bd y "NOMBRE COMPLETO" es lo que quiero que muestre al filtrar
     Sub mostrar_datos()
         DGV1.DataSource = ds.Tables("usuarios")
-        DGV1.Columns(5).Visible = False ' Se establece en False para que la columna no sea visible en el DataGridView
-        DGV1.Columns(0).HeaderText = "NOMBRE COMPLETO"
-        DGV1.Columns(1).HeaderText = "NICK/USER"
-        DGV1.Columns(2).HeaderText = "CONTRASEÑA"
-        DGV1.Columns(3).HeaderText = "E_MAIL"
-        DGV1.Columns(4).HeaderText = "TIPO USUARIO"
-        DGV1.Columns(1).Width = "200"
+
+        DGV1.Columns(0).Visible = False ' id_usuario
+        DGV1.Columns(5).Visible = False ' tipo_usuario
+        DGV1.Columns(6).Visible = False ' estado_usuario
+        DGV1.Columns(1).HeaderText = "NOMBRE COMPLETO"
+        DGV1.Columns(2).HeaderText = "NICK/USER"
+        DGV1.Columns(3).HeaderText = "CONTRASEÑA"
+        DGV1.Columns(4).HeaderText = "E_MAIL"
+        DGV1.Columns(2).Width = 200
+
     End Sub
     Sub pasar_datos()
         If DGV1.Rows.Count > 0 Then
-            txtnombre.Text = Trim(DGV1.CurrentRow.Cells(0).Value)
+            txtnombre.Text = Trim(DGV1.CurrentRow.Cells(0).Value) 'readOnly true hace los label inactivo hasta que se ejecuta una accion ej. pulsa boton agregar
             txtuser.Text = Trim(DGV1.CurrentRow.Cells(1).Value)
             txtcontraseña.Text = Trim(DGV1.CurrentRow.Cells(2).Value)
             txtemail.Text = Trim(DGV1.CurrentRow.Cells(3).Value)
@@ -51,10 +55,11 @@
                 ' INSERT sin id_usuario porque es AUTO_INCREMENT
                 consul1 = "INSERT INTO usuarios (nom_usuario, nick_usuario, clave_usuario, email_usuario, tipo_usuario, estado_usuario) " +
                           "VALUES ('" + Trim(txtnombre.Text) + "', '" + Trim(UCase(txtuser.Text)) + "', '" + Trim(UCase(txtcontraseña.Text)) + "', '" +
-                          Trim(txtemail.Text) + "', 'ADMIN', 'ACTIVO')"
+                          Trim(txtemail.Text) + "', 'ADMINISTRADOR', 'ACTIVO')"
             Else
                 ' UPDATE corrigiendo las comas
-                consul1 = "UPDATE usuarios SET nom_usuario='" + Trim(UCase(txtnombre.Text)) + "', " +
+                consul1 = "UPDATE usuarios SET id_usuario='" + Trim(UCase(txtnombre.Text)) +
+                          "nom_usuario='" + Trim(UCase(txtnombre.Text)) + "', " +
                           "nick_usuario='" + Trim(UCase(txtuser.Text)) + "', " +
                           "clave_usuario='" + Trim(txtcontraseña.Text) + "', " +
                           "email_usuario='" + Trim(LCase(txtemail.Text)) + "' " +
@@ -86,8 +91,8 @@
             consultas("select * from usuarios where estado_usuario='" + "ACTIVO" + "'", "usuarios")
             mostrar_datos()
             GroupBox1.Visible = True
-            TextBox1.Text = ""
-            TextBox1.Focus()
+            txtbuscar.Text = ""
+            txtbuscar.Focus()
         End If
     End Sub
     'eliminar de f_usuarios
@@ -99,23 +104,9 @@
             consultas("select * from usuarios where estado_usuario='" + "ACTIVO" + "'", "usuarios")
             mostrar_datos()
             GroupBox1.Visible = True
-            TextBox1.Text = ""
-            TextBox1.Focus()
+            txtbuscar.Text = ""
+            txtbuscar.Focus()
         End If
-    End Sub
-
-    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
-
-    End Sub
-
-    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
-        'este es label de dgv para filtrar
-        If RB1.Checked = True Then
-            consultas("SELECT * FROM USUARIOS where nom_usuario like'" + Trim(TextBox1.Text) + "%' AND estado_usuario='" + "ACTIVO" + "'", "usuarios")
-        Else
-            consultas("SELECT * FROM USUARIOS where id_usuario like'" + Trim(TextBox1.Text) + "%' AND estado_usuario='" + "ACTIVO" + "'", "usuarios")
-        End If
-        mostrar_datos()
     End Sub
 
     Private Sub btnaceptar_Click(sender As Object, e As EventArgs) Handles btnaceptar.Click
@@ -134,7 +125,7 @@
                 GroupBox1.Visible = False
                 pasar_datos()
                 Dim jl As Integer
-                jl = MsgBox("SEGURO DE ELIMINAR EL USUARIO?", 4 + 16, "INFOSISTEMAS-JL")
+                jl = MsgBox("SEGURO DE ELIMINAR EL USUARIO?", 4 + 16, "PROYECTO")
                 If jl = 6 Then
                     consul1 = "update usuarios set estado_usuario='" + "INACTIVO" + "' WHERE id_usuario='" + Trim(txtnombre.Text) + "'"
                     If accionesbdd(consul1) Then
@@ -151,6 +142,20 @@
 
     Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click
         'cerrar de dgv de usuarios
+        If Trim(tipusu) <> "ADMINISTRADOR" Then
+            MsgBox("AVISO! NO TIENE PERMISO PARA REALIZAR ESTA ACCION!!!!")
+        Else
+            op = 3
+            consultas("select * from usuarios where estado_usuario='" + "ACTIVO" + "'", "usuarios")
+            mostrar_datos()
+            GroupBox1.Visible = True
+            txtbuscar.Text = ""
+            txtbuscar.Focus()
+        End If
         GroupBox1.Visible = False
     End Sub
-End Class
+    Private Sub F_USUARIOS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If conex.State <> ConnectionState.Open Then
+            conexion()
+        End If
+    End Sub

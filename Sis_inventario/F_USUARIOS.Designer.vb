@@ -41,13 +41,13 @@ Partial Class F_USUARIOS
         Me.cbtipo = New System.Windows.Forms.ComboBox()
         Me.cbestado = New System.Windows.Forms.ComboBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.RB2 = New System.Windows.Forms.RadioButton()
-        Me.RB1 = New System.Windows.Forms.RadioButton()
+        Me.rbcodigo = New System.Windows.Forms.RadioButton()
+        Me.rbnombre = New System.Windows.Forms.RadioButton()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.btnaceptar = New System.Windows.Forms.Button()
         Me.DGV1 = New System.Windows.Forms.DataGridView()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtbuscar = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -116,6 +116,7 @@ Partial Class F_USUARIOS
         '
         Me.txtnombre.Location = New System.Drawing.Point(273, 44)
         Me.txtnombre.Name = "txtnombre"
+        Me.txtnombre.ReadOnly = True
         Me.txtnombre.Size = New System.Drawing.Size(379, 20)
         Me.txtnombre.TabIndex = 6
         '
@@ -123,6 +124,7 @@ Partial Class F_USUARIOS
         '
         Me.txtemail.Location = New System.Drawing.Point(273, 174)
         Me.txtemail.Name = "txtemail"
+        Me.txtemail.ReadOnly = True
         Me.txtemail.Size = New System.Drawing.Size(379, 20)
         Me.txtemail.TabIndex = 9
         '
@@ -130,6 +132,7 @@ Partial Class F_USUARIOS
         '
         Me.txtcontraseña.Location = New System.Drawing.Point(273, 131)
         Me.txtcontraseña.Name = "txtcontraseña"
+        Me.txtcontraseña.ReadOnly = True
         Me.txtcontraseña.Size = New System.Drawing.Size(379, 20)
         Me.txtcontraseña.TabIndex = 10
         '
@@ -137,6 +140,7 @@ Partial Class F_USUARIOS
         '
         Me.txtuser.Location = New System.Drawing.Point(273, 84)
         Me.txtuser.Name = "txtuser"
+        Me.txtuser.ReadOnly = True
         Me.txtuser.Size = New System.Drawing.Size(379, 20)
         Me.txtuser.TabIndex = 11
         '
@@ -214,40 +218,40 @@ Partial Class F_USUARIOS
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.RB2)
-        Me.GroupBox1.Controls.Add(Me.RB1)
+        Me.GroupBox1.Controls.Add(Me.rbcodigo)
+        Me.GroupBox1.Controls.Add(Me.rbnombre)
         Me.GroupBox1.Controls.Add(Me.Button2)
         Me.GroupBox1.Controls.Add(Me.btnaceptar)
         Me.GroupBox1.Controls.Add(Me.DGV1)
         Me.GroupBox1.Controls.Add(Me.Label7)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.txtbuscar)
         Me.GroupBox1.Location = New System.Drawing.Point(52, 44)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(695, 360)
         Me.GroupBox1.TabIndex = 38
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "SELECCIONE EL PROVEEDOR"
+        Me.GroupBox1.Text = "SELECCIONE EL USUARIO"
         Me.GroupBox1.Visible = False
         '
-        'RB2
+        'rbcodigo
         '
-        Me.RB2.AutoSize = True
-        Me.RB2.Location = New System.Drawing.Point(329, 19)
-        Me.RB2.Name = "RB2"
-        Me.RB2.Size = New System.Drawing.Size(89, 17)
-        Me.RB2.TabIndex = 6
-        Me.RB2.Text = "POR RUC/CI"
-        Me.RB2.UseVisualStyleBackColor = True
+        Me.rbcodigo.AutoSize = True
+        Me.rbcodigo.Location = New System.Drawing.Point(329, 19)
+        Me.rbcodigo.Name = "rbcodigo"
+        Me.rbcodigo.Size = New System.Drawing.Size(89, 17)
+        Me.rbcodigo.TabIndex = 6
+        Me.rbcodigo.Text = "POR RUC/CI"
+        Me.rbcodigo.UseVisualStyleBackColor = True
         '
-        'RB1
+        'rbnombre
         '
-        Me.RB1.AutoSize = True
-        Me.RB1.Location = New System.Drawing.Point(225, 18)
-        Me.RB1.Name = "RB1"
-        Me.RB1.Size = New System.Drawing.Size(98, 17)
-        Me.RB1.TabIndex = 5
-        Me.RB1.Text = "POR NOMBRE"
-        Me.RB1.UseVisualStyleBackColor = True
+        Me.rbnombre.AutoSize = True
+        Me.rbnombre.Location = New System.Drawing.Point(225, 18)
+        Me.rbnombre.Name = "rbnombre"
+        Me.rbnombre.Size = New System.Drawing.Size(98, 17)
+        Me.rbnombre.TabIndex = 5
+        Me.rbnombre.Text = "POR NOMBRE"
+        Me.rbnombre.UseVisualStyleBackColor = True
         '
         'Button2
         '
@@ -287,12 +291,12 @@ Partial Class F_USUARIOS
         Me.Label7.TabIndex = 1
         Me.Label7.Text = "INGRESE TODO O PARTE DEL NOMBRE"
         '
-        'TextBox1
+        'txtbuscar
         '
-        Me.TextBox1.Location = New System.Drawing.Point(225, 41)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(350, 20)
-        Me.TextBox1.TabIndex = 0
+        Me.txtbuscar.Location = New System.Drawing.Point(225, 41)
+        Me.txtbuscar.Name = "txtbuscar"
+        Me.txtbuscar.Size = New System.Drawing.Size(350, 20)
+        Me.txtbuscar.TabIndex = 0
         '
         'F_USUARIOS
         '
@@ -347,11 +351,11 @@ Partial Class F_USUARIOS
     Friend WithEvents cbtipo As ComboBox
     Friend WithEvents cbestado As ComboBox
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents RB2 As RadioButton
-    Friend WithEvents RB1 As RadioButton
+    Friend WithEvents rbcodigo As RadioButton
+    Friend WithEvents rbnombre As RadioButton
     Friend WithEvents Button2 As Button
     Friend WithEvents btnaceptar As Button
     Friend WithEvents DGV1 As DataGridView
     Friend WithEvents Label7 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtbuscar As TextBox
 End Class
