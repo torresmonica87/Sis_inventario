@@ -276,6 +276,7 @@ Partial Class F_CLIENTES
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ControlBox = False
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.txtemail)
         Me.Controls.Add(Me.btnguardar)
@@ -294,6 +295,7 @@ Partial Class F_CLIENTES
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Name = "F_CLIENTES"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "CONTROL DE CLIENTES"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

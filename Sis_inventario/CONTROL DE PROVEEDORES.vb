@@ -107,7 +107,7 @@ Public Class F_PROVEEDORES
     Private Sub btneliminar_Click(sender As Object, e As EventArgs) Handles btneliminar.Click
         'eliminar de control de proveedores
         If Trim(tipusu) <> "ADMINISTRADOR" Then
-            MsgBox("no tiene permiso para realizar esta acción!!!!")
+            MsgBox("NO TIENE PERMISO PARA REALIZAR ÉSTA ACCIÓN!!!!")
         Else
             op = 3
             consultas("select * from proveedores where estado_prove='" + "ACTIVO" + "'", "proveedores")
@@ -149,12 +149,12 @@ Public Class F_PROVEEDORES
                 GroupBox1.Visible = False
                 pasar_datos()
                 Dim jl As Integer
-                jl = MsgBox("SEGURO DE ELIMINAR EL CLIENTE?", 4 + 16, "INFOSISTEMAS-JL")
+                jl = MsgBox("SEGURO DE ELIMINAR EL PROVEEDOR?", 4 + 16, "PROYECTO")
                 If jl = 6 Then
-                    consul1 = "update cliente set estado_prove='" + "INACTIVO" + "' WHERE id_prove='" + Trim(txtid.Text) + "'"
+                    consul1 = "update proveedores set estado_prove='" + "INACTIVO" + "' WHERE id_prove='" + Trim(txtid.Text) + "'"
                     If accionesbdd(consul1) Then
                         Limpiartextos(Me)
-                        MsgBox("proveedor eliminado con éxito..!!!")
+                        MsgBox("PROVEEDOR ELIMINADO EXITOSAMENTE..!!!")
                         btnagregar.Focus()
                     End If
                 End If

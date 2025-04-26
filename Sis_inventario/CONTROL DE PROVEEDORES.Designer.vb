@@ -205,7 +205,7 @@ Partial Class F_PROVEEDORES
         Me.GroupBox1.Controls.Add(Me.DGV1)
         Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.TextBox1)
-        Me.GroupBox1.Location = New System.Drawing.Point(36, 45)
+        Me.GroupBox1.Location = New System.Drawing.Point(47, 43)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(695, 360)
         Me.GroupBox1.TabIndex = 37
@@ -283,6 +283,7 @@ Partial Class F_PROVEEDORES
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ControlBox = False
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.txtmail)
         Me.Controls.Add(Me.btnguardar)
@@ -301,6 +302,7 @@ Partial Class F_PROVEEDORES
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Name = "F_PROVEEDORES"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "CONTROL DE PROVEEDORES"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
