@@ -225,7 +225,7 @@ Partial Class F_USUARIOS
         Me.GroupBox1.Controls.Add(Me.DGV1)
         Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.txtbuscar)
-        Me.GroupBox1.Location = New System.Drawing.Point(52, 44)
+        Me.GroupBox1.Location = New System.Drawing.Point(53, 373)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(695, 360)
         Me.GroupBox1.TabIndex = 38
