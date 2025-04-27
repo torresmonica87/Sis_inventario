@@ -43,7 +43,7 @@ Partial Class F_USUARIOS
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.rbcodigo = New System.Windows.Forms.RadioButton()
         Me.rbnombre = New System.Windows.Forms.RadioButton()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.btncerrar = New System.Windows.Forms.Button()
         Me.btnaceptar = New System.Windows.Forms.Button()
         Me.DGV1 = New System.Windows.Forms.DataGridView()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -220,14 +220,14 @@ Partial Class F_USUARIOS
         '
         Me.GroupBox1.Controls.Add(Me.rbcodigo)
         Me.GroupBox1.Controls.Add(Me.rbnombre)
-        Me.GroupBox1.Controls.Add(Me.Button2)
+        Me.GroupBox1.Controls.Add(Me.btncerrar)
         Me.GroupBox1.Controls.Add(Me.btnaceptar)
         Me.GroupBox1.Controls.Add(Me.DGV1)
         Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.txtbuscar)
-        Me.GroupBox1.Location = New System.Drawing.Point(53, 373)
+        Me.GroupBox1.Location = New System.Drawing.Point(52, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(695, 360)
+        Me.GroupBox1.Size = New System.Drawing.Size(696, 504)
         Me.GroupBox1.TabIndex = 38
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "SELECCIONE EL USUARIO"
@@ -253,14 +253,14 @@ Partial Class F_USUARIOS
         Me.rbnombre.Text = "POR NOMBRE"
         Me.rbnombre.UseVisualStyleBackColor = True
         '
-        'Button2
+        'btncerrar
         '
-        Me.Button2.Location = New System.Drawing.Point(474, 231)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(101, 30)
-        Me.Button2.TabIndex = 4
-        Me.Button2.Text = "CERRAR"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btncerrar.Location = New System.Drawing.Point(474, 231)
+        Me.btncerrar.Name = "btncerrar"
+        Me.btncerrar.Size = New System.Drawing.Size(101, 30)
+        Me.btncerrar.TabIndex = 4
+        Me.btncerrar.Text = "CERRAR"
+        Me.btncerrar.UseVisualStyleBackColor = True
         '
         'btnaceptar
         '
@@ -353,7 +353,7 @@ Partial Class F_USUARIOS
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents rbcodigo As RadioButton
     Friend WithEvents rbnombre As RadioButton
-    Friend WithEvents Button2 As Button
+    Friend WithEvents btncerrar As Button
     Friend WithEvents btnaceptar As Button
     Friend WithEvents DGV1 As DataGridView
     Friend WithEvents Label7 As Label
