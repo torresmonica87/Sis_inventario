@@ -1,8 +1,7 @@
-﻿Imports MySql.Data.MySqlClient
+﻿
+Imports MySql.Data.MySqlClient
 Imports System.Windows.Forms
-
 Public Class F_USUARIOS
-    ' Declaración de variables
     Dim op As Integer
     Dim botonactivo As New List(Of String) From {"btnguardar", "btncancelar"}
     Dim botoninactivo As New List(Of String) From {"btnagregar", "btnmodificar", "btneliminar", "btnsalir"}
@@ -13,36 +12,53 @@ Public Class F_USUARIOS
     Dim tipusu As String
     Dim conex As MySqlConnection
     Dim ds As New DataSet
-
-    ' Método para inicializar la conexión
     Sub conexion()
         Try
             conex = New MySqlConnection("server=localhost;user id=root;password=123;database=inventario")
             conex.Open()
         Catch ex As MySqlException
-            MsgBox("ERROR AL CONECTAR CON LA BASE DE DATPS: " & ex.Message, MsgBoxStyle.Critical, "Error")
+            MsgBox("ERROR AL CONECTAR CON LA BASE DE DATOS: " + ex.Message, MsgBoxStyle.Critical, "Error")
+        End Try
+    End Sub
+    Sub consultas(query As String, tableName As String) ' SE TRATA DE CONSULTAR A LA BASE DE DATOS
+        Try
+            Dim da As New MySqlDataAdapter(query, conex)
+            ds.Clear()
+            da.Fill(ds, tableName)
+
+            If ds.Tables(tableName).Rows.Count > 0 Then 'SI LA TABLA USUARIO CONTIENE DATOS ENTONCES
+                DGV1.DataSource = ds.Tables(tableName) 'MOSTRAMOS A FORM
+                DGV1.Columns(5).Visible = False ' tipo_usuario
+                DGV1.Columns(6).Visible = False ' estado_usuario
+                DGV1.Columns(0).HeaderText = "ID"
+                DGV1.Columns(1).HeaderText = "NOMBRE"
+                DGV1.Columns(2).HeaderText = "USUARIO"
+                DGV1.Columns(3).HeaderText = "CONTRASEÑA"
+                DGV1.Columns(4).HeaderText = "EMAIL"
+                DGV1.Columns(1).Width = 200
+            Else
+                ' SI NO CONTIENE DATOS ENTONCES
+                MsgBox("No se encontraron datos en la base de datos.", MsgBoxStyle.Information, "Sin resultados")
+            End If
+        Catch ex As Exception
+
+            MsgBox("ERROR AL CONSULTAR LOS DATOS: " & ex.Message, MsgBoxStyle.Critical, "Error")
         End Try
     End Sub
 
-    ' Evento Load del formulario
     Private Sub F_USUARIOS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             If conex Is Nothing OrElse conex.State <> ConnectionState.Open Then
                 conexion()
             End If
             tipusu = "ADMINISTRADOR"
-
-            ' Desactivar textos al cargar
-            For Each ctrl As Control In Me.Controls
-                If TypeOf ctrl Is TextBox Then
-                    CType(ctrl, TextBox).ReadOnly = True
-                End If
-            Next
+            consultas("SELECT * FROM usuarios WHERE 1", "usuarios") 'CONSULTAR TOOODO EL CONTENIDO DE USUARIOS
+            mostrar_datos()
         Catch ex As Exception
-            MsgBox("ERROR AL CARGAR FORMULARIO: " & ex.Message, MsgBoxStyle.Critical, "Error")
+            MsgBox("ERROR AL CARGAR FORMULARIO: " + ex.Message, MsgBoxStyle.Critical, "Error")
         End Try
     End Sub
-    Sub ACTIVAR()
+    Sub ACTIVAR() ' METODO
         cambioestadoboton(Me, botonactivo, botoninactivo)
         cambiolectura(Me, txteditable, txtlectura)
     End Sub
@@ -52,7 +68,6 @@ Public Class F_USUARIOS
         cambiolectura(Me, txtlectura, txteditable)
     End Sub
 
-    ' Métodos auxiliares
     Sub cambiolectura(frm As Form, camposactivar As List(Of String), camposdesactivar As List(Of String))
         For Each ctrl As Control In frm.Controls
             If TypeOf ctrl Is TextBox Then
@@ -86,17 +101,20 @@ Public Class F_USUARIOS
     End Sub
 
     Sub mostrar_datos()
-        DGV1.DataSource = ds.Tables("usuarios")
-        DGV1.Columns(5).Visible = False 'TIPO
-        DGV1.Columns(6).Visible = False 'ESTADO
-        DGV1.Columns(0).HeaderText = "ID"
-        DGV1.Columns(1).HeaderText = "NOMBRE"
-        DGV1.Columns(2).HeaderText = "EMAIL"
-        DGV1.Columns(3).HeaderText = "USUARIO"
-        DGV1.Columns(4).HeaderText = "CONTRASEÑA"
-        DGV1.Columns(1).Width = 200
+        If ds.Tables("usuarios") IsNot Nothing Then
+            DGV1.DataSource = ds.Tables("usuarios")
+            DGV1.Columns(5).Visible = False 'TIPO
+            DGV1.Columns(6).Visible = False 'ESTADO
+            DGV1.Columns(0).HeaderText = "ID"
+            DGV1.Columns(1).HeaderText = "NOMBRE"
+            DGV1.Columns(2).HeaderText = "USUARIO"
+            DGV1.Columns(3).HeaderText = "CONTRASEÑA"
+            DGV1.Columns(4).HeaderText = "EMAIL"
+            DGV1.Columns(1).Width = 200
+        End If
     End Sub
 
+    ' PASAMOS A DGV1
     Sub pasar_datos()
         If DGV1.Rows.Count > 0 Then
             txtnombre.Text = Trim(DGV1.CurrentRow.Cells(1).Value)
@@ -105,22 +123,10 @@ Public Class F_USUARIOS
             txtcontraseña.Text = Trim(DGV1.CurrentRow.Cells(4).Value)
         End If
     End Sub
-    ' esto es para cifraR
-    Private Function HashSHA256(ByVal texto As String) As String
-        Using sha256 As System.Security.Cryptography.SHA256 = System.Security.Cryptography.SHA256.Create()
-            Dim bytesTexto As Byte() = System.Text.Encoding.UTF8.GetBytes(texto)
-            Dim bytesHash As Byte() = sha256.ComputeHash(bytesTexto)
-            Return BitConverter.ToString(bytesHash).Replace("-", "").ToLower()
-        End Using
-    End Function
-
-
-    ' Botones
     Private Sub btnagregar_Click(sender As Object, e As EventArgs) Handles btnagregar.Click
         Limpiartextos(Me)
         cambioestadoboton(Me, botonactivo, botoninactivo)
-
-        ' Activar solo los TextBox que deben estar activos
+        'ESTA ES LA ACTIVACION PARA LOS TEXTBOX
         txtnombre.ReadOnly = False
         txtemail.ReadOnly = False
         txtuser.ReadOnly = False
@@ -129,11 +135,12 @@ Public Class F_USUARIOS
         op = 1
         txtnombre.Focus()
     End Sub
+
     Private Sub btncancelar_Click(sender As Object, e As EventArgs) Handles btncancelar.Click
         Limpiartextos(Me)
         cambioestadoboton(Me, botoninactivo, botonactivo)
 
-        ' Volver a ponerlos como solo lectura
+        ' SE INACTIVAN NUEVAMENTE LOS TEXTBOX
         txtnombre.ReadOnly = True
         txtemail.ReadOnly = True
         txtuser.ReadOnly = True
@@ -145,7 +152,6 @@ Public Class F_USUARIOS
             MsgBox("NO TIENE PERMISO PARA REALIZAR ÉSTA ACCIÓN!", MsgBoxStyle.Exclamation)
         Else
             op = 2
-            ' Deberías llenar el datagrid aquí
             GroupBox1.Visible = True
             txtnombre.Clear()
             txtnombre.Focus()
@@ -166,6 +172,7 @@ Public Class F_USUARIOS
             Me.Close()
         End If
     End Sub
+
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         txtnombre.ReadOnly = True
         txtemail.ReadOnly = True
@@ -180,14 +187,14 @@ Public Class F_USUARIOS
 
         Try
             If op = 1 Then
-                consul1 = "INSERT INTO usuarios (nom_usuario, nick_usuario, clave_usuario, email_usuario, tipo_usuario, estado_usuario) " &
-                    "VALUES (@nom, @nick, @clave, @mail, @tipo, @estado)"
+                consul1 = "INSERT INTO usuarios (nom_usuario, nick_usuario, clave_usuario, email_usuario, tipo_usuario, estado_usuario) " +
+                "VALUES (@nom, @nick, @clave, @mail, @tipo, @estado)"
                 Dim cmd As New MySqlCommand(consul1, conex)
                 cmd.Parameters.AddWithValue("@nom", Trim(UCase(txtnombre.Text)))
                 cmd.Parameters.AddWithValue("@nick", Trim(txtuser.Text))
-                cmd.Parameters.AddWithValue("@clave", HashSHA256(Trim(txtcontraseña.Text)))
+                cmd.Parameters.AddWithValue("@clave", Trim(txtcontraseña.Text)) 'RECOMENDACION CIFRAR TOCA INVESTIGAR ESTO_______________________________
                 cmd.Parameters.AddWithValue("@mail", Trim(LCase(txtemail.Text)))
-                cmd.Parameters.AddWithValue("@tipo", "ADMINISTRADOR") '
+                cmd.Parameters.AddWithValue("@tipo", "ADMINISTRADOR")
                 cmd.Parameters.AddWithValue("@estado", "ACTIVO")
                 cmd.ExecuteNonQuery()
             ElseIf op = 2 Then
@@ -196,7 +203,7 @@ Public Class F_USUARIOS
                 cmd.Parameters.AddWithValue("@nom", Trim(UCase(txtnombre.Text)))
                 cmd.Parameters.AddWithValue("@mail", Trim(LCase(txtemail.Text)))
                 cmd.Parameters.AddWithValue("@nick", Trim(txtuser.Text))
-                cmd.Parameters.AddWithValue("@clave", HashSHA256(Trim(txtcontraseña.Text)))
+                cmd.Parameters.AddWithValue("@clave", Trim(txtcontraseña.Text)) 'INVESTIGAR CIFRAR. SE GUARDAN A BD PERO SIN CIFRADO
                 cmd.Parameters.AddWithValue("@id", idusu)
                 cmd.ExecuteNonQuery()
             End If
@@ -207,8 +214,52 @@ Public Class F_USUARIOS
             btnagregar.Focus()
 
         Catch ex As Exception
-            MsgBox("ERROR AL GUARDAR: " & ex.Message, MsgBoxStyle.Critical)
+            MsgBox("ERROR AL GUARDAR: " + ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
-    'FALTA EL CODIGO DE DGV1-----------------------------------------------------------------------
+
+    Private Sub btncerrar_Click(sender As Object, e As EventArgs) Handles btncerrar.Click
+        GroupBox1.Visible = False
+    End Sub
+
+    Private Sub btnaceptar_Click(sender As Object, e As EventArgs) Handles btnaceptar.Click
+        If DGV1.Rows.Count > 0 Then
+            If op = 2 Then
+                GroupBox1.Visible = False
+                cambioestadoboton(Me, botonactivo, botoninactivo)
+                cambiolectura(Me, txteditable, txtlectura)
+                idusu = DGV1.CurrentRow.Cells(0).Value ' USO ESTO PROQUE EN FORM NO HAY CAMPO ID
+                pasar_datos()
+                txtnombre.Focus()
+            End If
+            If op = 3 Then
+                GroupBox1.Visible = False
+                pasar_datos()
+                Dim jl As Integer
+                jl = MsgBox("SEGURO DE ELIMINAR EL USUARIO?", 4 + 16, "CONFIRMACIÓN")
+                If jl = 6 Then
+                    ' CON IDUSU ELIMINAMOS TAMBIEN . EN BD QUEDA INACTIVO 
+                    consul1 = "UPDATE usuarios SET estado_usuario='" + "INACTIVO" + "' WHERE id_usuario=" + idusu.ToString()
+                    If accionesbdd(consul1) Then
+                        Limpiartextos(Me)
+                        MsgBox("USUARIO ELIMINADO CON ÉXITO!", MsgBoxStyle.Information)
+                    End If
+                End If
+            End If
+        End If
+    End Sub
+    Private Sub txtbuscar_KeyUp(sender As Object, e As KeyEventArgs) Handles txtbuscar.KeyUp
+        Try
+            If txtbuscar.Text <> "" Then
+                Dim query As String = "SELECT * FROM usuarios WHERE nom_usuario LIKE '%" & txtbuscar.Text & "%'"
+                consultas(query, "usuarios")
+                mostrar_datos()
+            Else
+                mostrar_datos()
+            End If
+        Catch ex As Exception
+            MsgBox("ERROR AL REALIZAR LA BÚSQUEDA: " + ex.Message, MsgBoxStyle.Critical, "Error")
+        End Try
+    End Sub
+    'TUVE PROBLEMAS CON DGV1 EL MOFICAR ELIMINABA Y DESPUES NO MOSTRABA LOS DATOS EN DGV1. SII LEI Y USE IA PARA ESTA ESTA PARTE..........
 End Class

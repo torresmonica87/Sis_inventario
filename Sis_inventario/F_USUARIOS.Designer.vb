@@ -259,7 +259,7 @@ Partial Class F_USUARIOS
         Me.btncerrar.Name = "btncerrar"
         Me.btncerrar.Size = New System.Drawing.Size(101, 30)
         Me.btncerrar.TabIndex = 4
-        Me.btncerrar.Text = "CERRAR"
+        Me.btncerrar.Text = "CANCELAR"
         Me.btncerrar.UseVisualStyleBackColor = True
         '
         'btnaceptar
@@ -303,6 +303,7 @@ Partial Class F_USUARIOS
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ControlBox = False
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.cbestado)
         Me.Controls.Add(Me.cbtipo)
@@ -323,6 +324,7 @@ Partial Class F_USUARIOS
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Name = "F_USUARIOS"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "CONTROL DE USUARIOS"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
