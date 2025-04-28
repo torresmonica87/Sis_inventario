@@ -1,6 +1,5 @@
-﻿
-Imports MySql.Data.MySqlClient
-Imports System.Windows.Forms
+﻿Imports MySql.Data.MySqlClient
+
 Public Class F_USUARIOS
     Dim op As Integer
     Dim botonactivo As New List(Of String) From {"btnguardar", "btncancelar"}
@@ -12,6 +11,7 @@ Public Class F_USUARIOS
     Dim tipusu As String
     Dim conex As MySqlConnection
     Dim ds As New DataSet
+
     Sub conexion()
         Try
             conex = New MySqlConnection("server=localhost;user id=root;password=123;database=inventario")
@@ -20,16 +20,17 @@ Public Class F_USUARIOS
             MsgBox("ERROR AL CONECTAR CON LA BASE DE DATOS: " + ex.Message, MsgBoxStyle.Critical, "Error")
         End Try
     End Sub
-    Sub consultas(query As String, tableName As String) ' SE TRATA DE CONSULTAR A LA BASE DE DATOS
+
+    Sub consultas(query As String, tableName As String)
         Try
             Dim da As New MySqlDataAdapter(query, conex)
             ds.Clear()
             da.Fill(ds, tableName)
 
-            If ds.Tables(tableName).Rows.Count > 0 Then 'SI LA TABLA USUARIO CONTIENE DATOS ENTONCES
-                DGV1.DataSource = ds.Tables(tableName) 'MOSTRAMOS A FORM
-                DGV1.Columns(5).Visible = False ' tipo_usuario
-                DGV1.Columns(6).Visible = False ' estado_usuario
+            If ds.Tables(tableName).Rows.Count > 0 Then
+                DGV1.DataSource = ds.Tables(tableName)
+                DGV1.Columns(5).Visible = False
+                DGV1.Columns(6).Visible = False
                 DGV1.Columns(0).HeaderText = "ID"
                 DGV1.Columns(1).HeaderText = "NOMBRE"
                 DGV1.Columns(2).HeaderText = "USUARIO"
@@ -37,11 +38,9 @@ Public Class F_USUARIOS
                 DGV1.Columns(4).HeaderText = "EMAIL"
                 DGV1.Columns(1).Width = 200
             Else
-                ' SI NO CONTIENE DATOS ENTONCES
                 MsgBox("No se encontraron datos en la base de datos.", MsgBoxStyle.Information, "Sin resultados")
             End If
         Catch ex As Exception
-
             MsgBox("ERROR AL CONSULTAR LOS DATOS: " & ex.Message, MsgBoxStyle.Critical, "Error")
         End Try
     End Sub
@@ -52,13 +51,14 @@ Public Class F_USUARIOS
                 conexion()
             End If
             tipusu = "ADMINISTRADOR"
-            consultas("SELECT * FROM usuarios WHERE 1", "usuarios") 'CONSULTAR TOOODO EL CONTENIDO DE USUARIOS
+            consultas("SELECT * FROM usuarios WHERE 1", "usuarios")
             mostrar_datos()
         Catch ex As Exception
             MsgBox("ERROR AL CARGAR FORMULARIO: " + ex.Message, MsgBoxStyle.Critical, "Error")
         End Try
     End Sub
-    Sub ACTIVAR() ' METODO
+
+    Sub ACTIVAR()
         cambioestadoboton(Me, botonactivo, botoninactivo)
         cambiolectura(Me, txteditable, txtlectura)
     End Sub
@@ -103,8 +103,8 @@ Public Class F_USUARIOS
     Sub mostrar_datos()
         If ds.Tables("usuarios") IsNot Nothing Then
             DGV1.DataSource = ds.Tables("usuarios")
-            DGV1.Columns(5).Visible = False 'TIPO
-            DGV1.Columns(6).Visible = False 'ESTADO
+            DGV1.Columns(5).Visible = False
+            DGV1.Columns(6).Visible = False
             DGV1.Columns(0).HeaderText = "ID"
             DGV1.Columns(1).HeaderText = "NOMBRE"
             DGV1.Columns(2).HeaderText = "USUARIO"
@@ -114,7 +114,6 @@ Public Class F_USUARIOS
         End If
     End Sub
 
-    ' PASAMOS A DGV1
     Sub pasar_datos()
         If DGV1.Rows.Count > 0 Then
             txtnombre.Text = Trim(DGV1.CurrentRow.Cells(1).Value)
@@ -123,10 +122,10 @@ Public Class F_USUARIOS
             txtcontraseña.Text = Trim(DGV1.CurrentRow.Cells(4).Value)
         End If
     End Sub
+
     Private Sub btnagregar_Click(sender As Object, e As EventArgs) Handles btnagregar.Click
         Limpiartextos(Me)
         cambioestadoboton(Me, botonactivo, botoninactivo)
-        'ESTA ES LA ACTIVACION PARA LOS TEXTBOX
         txtnombre.ReadOnly = False
         txtemail.ReadOnly = False
         txtuser.ReadOnly = False
@@ -139,8 +138,6 @@ Public Class F_USUARIOS
     Private Sub btncancelar_Click(sender As Object, e As EventArgs) Handles btncancelar.Click
         Limpiartextos(Me)
         cambioestadoboton(Me, botoninactivo, botonactivo)
-
-        ' SE INACTIVAN NUEVAMENTE LOS TEXTBOX
         txtnombre.ReadOnly = True
         txtemail.ReadOnly = True
         txtuser.ReadOnly = True
@@ -192,7 +189,7 @@ Public Class F_USUARIOS
                 Dim cmd As New MySqlCommand(consul1, conex)
                 cmd.Parameters.AddWithValue("@nom", Trim(UCase(txtnombre.Text)))
                 cmd.Parameters.AddWithValue("@nick", Trim(txtuser.Text))
-                cmd.Parameters.AddWithValue("@clave", Trim(txtcontraseña.Text)) 'RECOMENDACION CIFRAR TOCA INVESTIGAR ESTO_______________________________
+                cmd.Parameters.AddWithValue("@clave", Trim(txtcontraseña.Text))
                 cmd.Parameters.AddWithValue("@mail", Trim(LCase(txtemail.Text)))
                 cmd.Parameters.AddWithValue("@tipo", "ADMINISTRADOR")
                 cmd.Parameters.AddWithValue("@estado", "ACTIVO")
@@ -203,16 +200,17 @@ Public Class F_USUARIOS
                 cmd.Parameters.AddWithValue("@nom", Trim(UCase(txtnombre.Text)))
                 cmd.Parameters.AddWithValue("@mail", Trim(LCase(txtemail.Text)))
                 cmd.Parameters.AddWithValue("@nick", Trim(txtuser.Text))
-                cmd.Parameters.AddWithValue("@clave", Trim(txtcontraseña.Text)) 'INVESTIGAR CIFRAR. SE GUARDAN A BD PERO SIN CIFRADO
+                cmd.Parameters.AddWithValue("@clave", Trim(txtcontraseña.Text))
                 cmd.Parameters.AddWithValue("@id", idusu)
                 cmd.ExecuteNonQuery()
+                'USAR + hace que se concatene directamente dentro de la consulta SQL 
+                'USAR @ Los valores se pasan a la consulta utilizando el método AddWithValue de MySqlCommand, lo que es más seguro previene ataque SQL Injection INVESTIGAR MAS
             End If
 
             MsgBox("USUARIO REGISTRADO EXITOSAMENTE!", MsgBoxStyle.Information)
             Limpiartextos(Me)
             DESACTIVAR()
             btnagregar.Focus()
-
         Catch ex As Exception
             MsgBox("ERROR AL GUARDAR: " + ex.Message, MsgBoxStyle.Critical)
         End Try
@@ -228,7 +226,7 @@ Public Class F_USUARIOS
                 GroupBox1.Visible = False
                 cambioestadoboton(Me, botonactivo, botoninactivo)
                 cambiolectura(Me, txteditable, txtlectura)
-                idusu = DGV1.CurrentRow.Cells(0).Value ' USO ESTO PROQUE EN FORM NO HAY CAMPO ID
+                idusu = DGV1.CurrentRow.Cells(0).Value
                 pasar_datos()
                 txtnombre.Focus()
             End If
@@ -238,7 +236,6 @@ Public Class F_USUARIOS
                 Dim jl As Integer
                 jl = MsgBox("SEGURO DE ELIMINAR EL USUARIO?", 4 + 16, "CONFIRMACIÓN")
                 If jl = 6 Then
-                    ' CON IDUSU ELIMINAMOS TAMBIEN . EN BD QUEDA INACTIVO 
                     consul1 = "UPDATE usuarios SET estado_usuario='" + "INACTIVO" + "' WHERE id_usuario=" + idusu.ToString()
                     If accionesbdd(consul1) Then
                         Limpiartextos(Me)
@@ -248,8 +245,9 @@ Public Class F_USUARIOS
             End If
         End If
     End Sub
+
     Private Sub txtbuscar_KeyUp(sender As Object, e As KeyEventArgs) Handles txtbuscar.KeyUp
-        Try
+        Try ' MEJOR MANEJO DE ERRORES , RECOMENDADO BUENA PRACTICA
             If txtbuscar.Text <> "" Then
                 Dim query As String = "SELECT * FROM usuarios WHERE nom_usuario LIKE '%" & txtbuscar.Text & "%'"
                 consultas(query, "usuarios")
@@ -261,5 +259,7 @@ Public Class F_USUARIOS
             MsgBox("ERROR AL REALIZAR LA BÚSQUEDA: " + ex.Message, MsgBoxStyle.Critical, "Error")
         End Try
     End Sub
-    'TUVE PROBLEMAS CON DGV1 EL MOFICAR ELIMINABA Y DESPUES NO MOSTRABA LOS DATOS EN DGV1. SII LEI Y USE IA PARA ESTA ESTA PARTE..........
+    'es más seguro y adecuado para manejar datos de usuario debido al uso de parámetros SQL, manejo de errores y la posibilidad de hacer tanto inserciones como actualizaciones de manera flexible.
+    'en donde no uso @ try catch tiene el inconveniente de usar concatenación directa en las consultas SQL, lo cual no es recomendable por razones de seguridad.
+    'más susceptible a problemas de seguridad y errores no controlados. el usar + y controlar bien las excepciones 
 End Class
