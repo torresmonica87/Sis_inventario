@@ -234,7 +234,7 @@ Public Class F_PRODUCTOS
     End Sub
 
     Private Sub txtbuscar_TextChanged(sender As Object, e As EventArgs) Handles txtbuscar.TextChanged
-        If rbnombre.Checked = True Then
+        If rbnombre.Checked = True Then 'no filtra rbnombre 
             consultas("select * from productos where deta_prod like'" + Trim(txtbuscar.Text) + "%'", "productos")
         Else
             consultas("select * from productos where id_prod like'" + Trim(txtbuscar.Text) + "%'", "productos")

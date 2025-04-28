@@ -55,7 +55,7 @@ Public Class F_CLIENTES
     End Sub
 
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
-        If RB1.Checked = True Then
+        If RB1.Checked = True Then 'no filtra rbnombre 
             consultas("SELECT * FROM CLIENTE where nom_cliente like'" + Trim(TextBox1.Text) + "%' AND estado_cliente='" + "ACTIVO" + "'", "cliente")
         Else
             consultas("SELECT * FROM CLIENTE where id_cliente like'" + Trim(TextBox1.Text) + "%' AND estado_cliente='" + "ACTIVO" + "'", "cliente")

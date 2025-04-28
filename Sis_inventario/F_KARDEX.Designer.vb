@@ -366,7 +366,7 @@ Partial Class F_KARDEX
         Me.GroupBox1.Controls.Add(Me.rbnombre)
         Me.GroupBox1.Controls.Add(Me.txtbuscar)
         Me.GroupBox1.Controls.Add(Me.Label13)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 14)
+        Me.GroupBox1.Location = New System.Drawing.Point(22, 56)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(748, 382)
         Me.GroupBox1.TabIndex = 34

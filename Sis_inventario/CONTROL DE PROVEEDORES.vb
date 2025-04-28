@@ -124,6 +124,7 @@ Public Class F_PROVEEDORES
 
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
         'este es label de dgv para filtrar
+        'no filtra rbnombre 
         If RB1.Checked = True Then
             consultas("SELECT * FROM PROVEEDORES where nom_prove like'" + Trim(TextBox1.Text) + "%' AND estado_prove='" + "ACTIVO" + "'", "proveedores")
         Else

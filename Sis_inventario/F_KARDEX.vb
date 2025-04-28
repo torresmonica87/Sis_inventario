@@ -50,6 +50,7 @@
     End Sub
 
     Sub calcular()
+        VMOVI1 = 0
         If txtid.Text <> "" Then
             If txtstock.Text = "" Then
                 st1 = 0
@@ -105,18 +106,20 @@
         GroupBox1.Visible = False
 
     End Sub
-
     Private Sub txtbuscar_TextChanged(sender As Object, e As EventArgs) Handles txtbuscar.TextChanged
-        If rbnombre.Checked = True Then
-            consultas("Select * from productos where deta_prod Like'" + Trim(txtbuscar.Text) + "%'", "productos")
+        If rbnombre.Checked = True Then 'no filtra rbnombre 
+            consultas("select * from productos where deta_prod like'" + Trim(txtbuscar.Text) + "%'", "productos")
         Else
             consultas("select * from productos where id_prod like'" + Trim(txtbuscar.Text) + "%'", "productos")
         End If
         mostrar_producto()
     End Sub
 
+
     Private Sub txtsaldo_TextChanged(sender As Object, e As EventArgs) Handles txtsaldo.TextChanged
-        txtsaldo.Text = st2
+        'txtsaldo.Text = st2
+        'Una mejor forma sería eliminar el evento en txtsaldo, porque ya en calcular() se actualiza txtsaldo. No necesito actualizarlo en TextChanged puede provocar un ciclo infinito.??
+        'probado 
     End Sub
 
     Private Sub txtentrada_TextChanged(sender As Object, e As EventArgs) Handles txtentrada.TextChanged
@@ -141,6 +144,48 @@
                 calcular()
             End If
         End If
+    End Sub
+
+    Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
+        If txtid.Text = "" Or txtmovimiento.Text = "" Or VMOVI1 = 0 Then
+            MsgBox("LOS DATOS NO ESTÁN COMPLETOS!!")
+            Button1.Focus()
+
+        Else
+            Dim valorentrada1 As Integer, valorsalida1 As Integer
+            If tipo1 = 1 Then
+                valorentrada1 = VMOVI1
+                valorsalida1 = 0
+            Else
+                valorentrada1 = 0
+                valorsalida1 = VMOVI1
+
+
+            End If
+            'registrar movimiento en kardex
+            consul1 = "insert into kardex (fecha_kardex, detalle_kardex,entrada_kardex, salida_kardex, saldo_kardex, id_prod, id_usuario)" _
+                & " values ('" + Trim(Format(dtfecha.Value.Date, "yyyy-MM-dd")) + "','" + Trim(UCase(txtmovimiento.Text)) + "','" + Str(valorentrada1) + "','" + Str(valorsalida1) + "'" _
+                & ", '" + Str(st2) + "','" + Trim(txtid.Text) + "','" + Str(idusu) + "')"
+
+            'actualizar stock de productos
+            consul2 = "update productos set stock_prod='" + Str(st2) + "'where id_prod='" + Trim(txtid.Text) + "'"
+            If acciontabla(consul1) And acciontabla(consul2) Then
+                MsgBox("REGISTRO ACTUALIZADO EXITOSAMENTE!")
+                Limpiartextos(Me)
+                desactivar()
+                btnentrada.Focus()
+
+
+            End If
+        End If
+    End Sub
+
+    Private Sub btnbuscar_Click(sender As Object, e As EventArgs) Handles btnbuscar.Click
+        GroupBox1.Visible = True
+        txtbuscar.Text = ""
+        consultas("SELECT * FROM productos", "productos")
+        mostrar_producto()
+        txtbuscar.Focus()
     End Sub
 
     Private Sub btnentrada_Click(sender As Object, e As EventArgs) Handles btnentrada.Click
