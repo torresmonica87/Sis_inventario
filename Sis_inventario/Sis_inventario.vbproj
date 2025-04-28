@@ -152,6 +152,12 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="F_KARDEX.Designer.vb">
+      <DependentUpon>F_KARDEX.vb</DependentUpon>
+    </Compile>
+    <Compile Include="F_KARDEX.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="F_MENUP.Designer.vb">
       <DependentUpon>F_MENUP.vb</DependentUpon>
     </Compile>
@@ -193,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_KARDEX.resx">
+      <DependentUpon>F_KARDEX.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F_MENUP.resx">
       <DependentUpon>F_MENUP.vb</DependentUpon>

@@ -34,6 +34,8 @@ Partial Class F_MENUP
         Me.LBNICK = New System.Windows.Forms.ToolStripStatusLabel()
         Me.LBDETALLE = New System.Windows.Forms.ToolStripStatusLabel()
         Me.LBTIPO = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.REGISTRODEPRODUCTIOSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MOVIMIENTODEPRODUCTOSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -57,6 +59,7 @@ Partial Class F_MENUP
         '
         'PRODUCTOSToolStripMenuItem
         '
+        Me.PRODUCTOSToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.REGISTRODEPRODUCTIOSToolStripMenuItem, Me.MOVIMIENTODEPRODUCTOSToolStripMenuItem})
         Me.PRODUCTOSToolStripMenuItem.Name = "PRODUCTOSToolStripMenuItem"
         Me.PRODUCTOSToolStripMenuItem.Size = New System.Drawing.Size(87, 52)
         Me.PRODUCTOSToolStripMenuItem.Text = "PRODUCTOS"
@@ -114,6 +117,18 @@ Partial Class F_MENUP
         Me.LBTIPO.Size = New System.Drawing.Size(12, 17)
         Me.LBTIPO.Text = "-"
         '
+        'REGISTRODEPRODUCTIOSToolStripMenuItem
+        '
+        Me.REGISTRODEPRODUCTIOSToolStripMenuItem.Name = "REGISTRODEPRODUCTIOSToolStripMenuItem"
+        Me.REGISTRODEPRODUCTIOSToolStripMenuItem.Size = New System.Drawing.Size(236, 22)
+        Me.REGISTRODEPRODUCTIOSToolStripMenuItem.Text = "REGISTRO DE PRODUCTOS"
+        '
+        'MOVIMIENTODEPRODUCTOSToolStripMenuItem
+        '
+        Me.MOVIMIENTODEPRODUCTOSToolStripMenuItem.Name = "MOVIMIENTODEPRODUCTOSToolStripMenuItem"
+        Me.MOVIMIENTODEPRODUCTOSToolStripMenuItem.Size = New System.Drawing.Size(236, 22)
+        Me.MOVIMIENTODEPRODUCTOSToolStripMenuItem.Text = "MOVIMIENTO DE PRODUCTOS"
+        '
         'F_MENUP
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -150,4 +165,6 @@ Partial Class F_MENUP
     Friend WithEvents LBNICK As ToolStripStatusLabel
     Friend WithEvents LBDETALLE As ToolStripStatusLabel
     Friend WithEvents LBTIPO As ToolStripStatusLabel
+    Friend WithEvents REGISTRODEPRODUCTIOSToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MOVIMIENTODEPRODUCTOSToolStripMenuItem As ToolStripMenuItem
 End Class

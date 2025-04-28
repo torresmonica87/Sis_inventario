@@ -21,8 +21,8 @@
     End Sub
 
     Private Sub PRODUCTOSToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PRODUCTOSToolStripMenuItem.Click
-        F_PRODUCTOS.MdiParent = Me
-        F_PRODUCTOS.Show()
+        ' F_PRODUCTOS.MdiParent = Me SE COMENTO CUANDO EMPECE A REALIZAR KARDEX
+        ' F_PRODUCTOS.Show() ESTAS LINEAS LE PEGUE HACIENDO DOBLE CLICK EN LA OPCION REGISTRO DE PRODUCTOS DESDE F_MENU
     End Sub
 
     Private Sub CLIENTESToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CLIENTESToolStripMenuItem.Click
@@ -33,5 +33,18 @@
     Private Sub PROVEEDORESToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PROVEEDORESToolStripMenuItem.Click
         F_PROVEEDORES.MdiParent = Me
         F_PROVEEDORES.Show()
+    End Sub
+
+    Private Sub REGISTRODEPRODUCTIOSToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles REGISTRODEPRODUCTIOSToolStripMenuItem.Click
+        'F_PRODUCTOS.MdiParent = Me
+        ' F_PRODUCTOS.Show()
+        Dim hijoDeFProducto As New F_PRODUCTOS
+        hijoDeFProducto.ShowDialog()
+    End Sub
+
+    Private Sub MOVIMIENTODEPRODUCTOSToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MOVIMIENTODEPRODUCTOSToolStripMenuItem.Click
+        'DOBLE CLICK MOVIEMINTO DE PRODUCTROS DE F_MENU
+        F_KARDEX.MdiParent = Me
+        F_KARDEX.Show()
     End Sub
 End Class
